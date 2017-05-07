@@ -1,0 +1,21 @@
+group 'info.ernestas.simple'
+version '0.1.0'
+
+apply plugin: 'war'
+
+war {
+    archiveName 'simplespringexample.war'
+    destinationDir = file('../build')
+}
+
+dependencies {
+    compile project(':core')
+
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
+    compile 'com.jayway.jsonpath:json-path:2.1.0'
+    compile 'org.springframework:spring-webmvc:4.2.4.RELEASE'
+    compile 'javax.servlet:javax.servlet-api:3.1.0'
+    compile 'javax.servlet:jstl:1.2'
+
+    testCompile project(path: ':core', configuration: 'tests')
+}
