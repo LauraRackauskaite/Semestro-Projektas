@@ -62,13 +62,13 @@
                     <a class="page-scroll" href="#contact">Contact</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#Prisijungti">Prisijungti</a>
+                    <a class="page-scroll" href="#Prisijungti">NEveik</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="/registracija/">Registracija</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/login">opa</a>
+                    <a class="page-scroll" href="/login/">Prisijungti</a>
                 </li>
             </ul>
         </div>
@@ -118,6 +118,8 @@
     </div>
 </section>
 
+
+
 <!-- Prisijungti Section -->
 <section id="Prisijungti" class="content-section text-center">
 
@@ -126,24 +128,24 @@
             ${loginError}
             <form class="col-lg-8 col-lg-offset-2">
                 <h2>Norėdami prisijungti prie paskyros suveskite duomenis</h2>
-                <form action="index" method="post">
-                <div class="form-group row">
-                    <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="epastas" name="epastas" placeholder="example.karolisNesakysiu@Gmail.com">
+                <form action="/login" method="post">
+                    <div class="form-group row">
+                        <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="epastas" name="epastas" placeholder="" class="form-control"/>
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
-                    <div class="col-sm-6">
-                        <input type="text" class="form-control" id="slaptazodis" name="slaptazodis" placeholder="">
+                    <div class="form-group row">
+                        <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
+                        <div class="col-sm-6">
+                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
+                        </div>
                     </div>
-                </div>
-                <a id="loginButton" class="btn btn-default btn-lg" class="form-control"> Prisijungti</a>
+                    <button id="loginButton" class="btn btn-default btn-lg" class="form-control"> Prisijungti</button>
                 </form>>
             </form>
-            </div>
         </div>
+    </div>
 </section>
 
 

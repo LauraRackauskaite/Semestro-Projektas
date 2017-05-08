@@ -30,7 +30,13 @@ public class VartotojasDaoImpl implements VartotojasDao{
     }
     public Vartotojas findByEpastasAndSlaptazodis(String ePastas, String slaptazodis)
     {
-       return vartotojasRepository.findByEPastasAndSlaptazodis(ePastas,slaptazodis);
+        return vartotojasRepository.findByEPastasAndSlaptazodis(ePastas,slaptazodis);
+    }
+    public Vartotojas findByEPastas(String ePastas){
+        return vartotojasRepository.findByEPastas(ePastas);
+    }
+    public void registruotiNaujaVartotoja(Vartotojas vartotojas){
+        vartotojasRepository.saveAndFlush(vartotojas);
     }
 
 }

@@ -23,21 +23,14 @@ public class IndexController {
 
     @RequestMapping(value = "/index", method = RequestMethod.POST)
     public  String verifyIndex(@RequestParam String epastas, @RequestParam String slaptazodis,
-                                HttpSession session, Model model) {
-        System.out.println(epastas);
-        System.out.println(slaptazodis);
+                               HttpSession session, Model model) {
         Vartotojas vartotojas = vartotojasService.tikrintiIvestusDuomenis(epastas, slaptazodis);
-
         if(vartotojas == null)
         {
-            //model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
-            //return "login";
-            return "redirect: /vietos";
+            model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
+            return "vietos";
         }
-
-        //session.setAttribute("loggedInUser", vartotojas);
-        return "redirect: /login";
-
-
+        session.setAttribute("loggedInUser", vartotojas);
+        return "Vartotojas";
     }
 }

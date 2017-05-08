@@ -11,4 +11,6 @@ public interface VartotojasDao {
     List<Vartotojas> findAll();
     Vartotojas findByVardasAndPavarde(String vardas, String pavarde);
     Vartotojas findByEpastasAndSlaptazodis(String epastas, String slaptazodis);
+    Vartotojas findByEPastas(String ePastas);
+    void registruotiNaujaVartotoja(Vartotojas vartotojas);
 }

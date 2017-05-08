@@ -13,31 +13,25 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class LoginController {
+
     @Autowired
-    private VartotojasService vartotojasService;
+    private VartotojasService Service;
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String showIndex() {
+    public String showLoginForm() {
         return "login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public  String verifyLogin(@RequestParam String epastas, @RequestParam String slaptazodis,
-                                HttpSession session, Model model) {
-        System.out.println(epastas);
-        System.out.println(slaptazodis);
-        Vartotojas vartotojas = vartotojasService.tikrintiIvestusDuomenis(epastas, slaptazodis);
+    public String verifyLogin(@RequestParam String epastas, @RequestParam String slaptazodis,
+                              HttpSession session, Model model) {
 
-        if(vartotojas == null)
-        {
-            //model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
-            //return "login";
-            return "redirect: /vietos";
+        Vartotojas asmuo = Service.tikrintiIvestusDuomenis(epastas, slaptazodis);
+        if(asmuo == null) {
+            model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
+            return "login";
         }
-
-        //session.setAttribute("loggedInUser", vartotojas);
-        return "redirect: /login";
-
-
+        session.setAttribute("loggedInUser", asmuo);
+        return "Vartotojas";
     }
 }

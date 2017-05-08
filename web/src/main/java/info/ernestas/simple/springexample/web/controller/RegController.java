@@ -12,6 +12,4 @@ public class RegController {
     public String showIndex() {
         return "regis";
     }
-
-
 }

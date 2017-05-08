@@ -55,15 +55,6 @@
                 <li>
                     <a class="page-scroll" href="#about">About</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#Prisijungti">NEveik</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/registracija/">Registracija</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/login/">Prisijungti</a>
-                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -71,36 +62,30 @@
     <!-- /.container -->
 </nav>
 
-
-<div class="container">
-    <section id="Prisijungti" class="content-section text-center">
-        <div class="Prisijungti-section">
-            <div class="container">
-
-                <h2>Norėdami prisijungti prie paskyros suveskite duomenis</h2>
-                <form action="/login" method="post">
-                    <div class="form-group row">
-                        <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="epastas" name="epastas" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <button id="loginButton" class="btn btn-default btn-lg" class="form-control">Prisijungti</button>
-                    <br><br>
-                    <div class="label">
-                        <font color="red">${loginError}</font>
-                    </div>
-                </form>
-
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Sveikas ${loggedInUser.vardas}</h1>
+                    <p class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)
+                        <br>Sukurta Grupės Trepsiukai</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</header>
+
+
+
+
+
+
+
 </body>
+
 </html>

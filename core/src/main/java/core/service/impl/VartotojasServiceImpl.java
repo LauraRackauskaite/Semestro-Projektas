@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,7 +28,23 @@ public class VartotojasServiceImpl implements VartotojasService{
 
     @Override
     public Vartotojas tikrintiIvestusDuomenis(String epastas, String slaptazodis) {
-            return vartotojasDao.findByEpastasAndSlaptazodis(epastas, slaptazodis);
+        return vartotojasDao.findByEpastasAndSlaptazodis(epastas, slaptazodis);
+    }
+    @Override
+    public void registruotiNaujaVartotoja(int tipas, String vardas, String pavarde, int lytis,
+                                          String adresas, String ePastas, String slaptazodis){
+        Date siandien = new Date();
+        Vartotojas naujas = new Vartotojas();
+        naujas.setVardas(vardas);
+        naujas.setPavarde(pavarde);
+        naujas.setAdresas(adresas);
+        naujas.setePastas(ePastas);
+        naujas.setLytis(lytis);
+        naujas.setVartotojoTipoKodas(tipas);
+        naujas.setSlaptazodis(slaptazodis);
+        naujas.setArAktyvus(1);
+        naujas.setSukurimoData(siandien);
+        vartotojasDao.registruotiNaujaVartotoja(naujas);
     }
 }
 

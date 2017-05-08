@@ -8,4 +8,6 @@ import java.util.List;
 public interface VartotojasService {
     List<Vartotojas> findAllVartotojas();
     Vartotojas tikrintiIvestusDuomenis(String epastas, String slaptazodis);
+    void registruotiNaujaVartotoja(int tipas, String vardas, String pavarde, int lytis,  String adresas,
+                                   String ePastas, String slaptazodis);
 }
