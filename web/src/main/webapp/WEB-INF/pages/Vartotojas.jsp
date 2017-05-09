@@ -29,9 +29,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
 
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -53,6 +56,9 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
+                    <a class="page-scroll" href="/nustatymai">nustatymai</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="#about">About</a>
                 </li>
             </ul>
@@ -62,13 +68,30 @@
     <!-- /.container -->
 </nav>
 
-<div class="container">
+<!-- Intro Header -->
+<header class="intro">
+    <div class="intro-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1 class="brand-heading">Sveikas ${loggedInUser.vardas}</h1>
+                    <p class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)
+                        <br>Sukurta Grupės Trepsiukai</p>
+                    <a href="#about" class="btn btn-circle page-scroll">
+                        <i class="fa fa-angle-double-down animated"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 
 
 
 
 
-</div>
+
+
 </body>
 
 </html>

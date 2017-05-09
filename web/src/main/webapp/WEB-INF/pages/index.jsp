@@ -35,6 +35,8 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
+
+
 <!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
@@ -86,8 +88,8 @@
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
                     <h1 class="brand-heading">Renginių rezervavimo ir paieškos IS</h1>
-                    <p class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)
-                        <br>Sukurta Grupės Trepsiukai</p>
+                    <p1 class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)</p1>
+                        <br>Sukurta Grupės Trepsiukai</br>
                     <a href="#about" class="btn btn-circle page-scroll">
                         <i class="fa fa-angle-double-down animated"></i>
                     </a>
