@@ -30,6 +30,19 @@
     <![endif]-->
 
 
+    <!--------------------------------------------------->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexible Calendar</title>
+    <meta name="description" content="Flexible Calendar with jQuery and CSS3" />
+    <meta name="keywords" content="responsive, calendar, jquery, plugin, full page, flexible, javascript, css3, media queries" />
+    <meta name="author" content="Codrops" />
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="../../resources/Calendario/css/calendar.css" />
+    <link rel="stylesheet" type="text/css" href="../../resources/Calendario/css/custom_1.css" />
+    <script src="../../resources/Calendario/js/modernizr.custom.63321.js"></script>
+    <!---------------------------------------------------->
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -70,38 +83,42 @@
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
-</nav>
-
-
-<div class="container">
-    <section id="Prisijungti" class="content-section text-center">
-        <div class="Prisijungti-section">
-            <div class="container">
-
-                <h2>Norėdami prisijungti prie paskyros suveskite duomenis</h2>
-                <form action="/login" method="post">
-                    <div class="form-group row">
-                        <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="epastas" name="epastas" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <button id="loginButton" class="btn btn-default btn-lg" class="form-control">Prisijungti</button>
-                    <br><br>
-                    <div class="label">
-                        <font color="red" size="3" >${loginError}</font>
-                    </div>
-                </form>
-
+    <section id="registracija" class="content-section text-center">
+    <div id="calendar" class="fc-calendar-container">
+        <div class="fc-calendar fc-five-rows">
+            <div class="fc-head">
+                <div>pirma</div>
+                <div>Tuesday</div>
+                <div>Wednesday</div>
+                <div>Thursday</div>
+                <div>Friday</div>
+                <div>Saturday</div>
+                <div>Sunday</div>
+            </div>
+            <div class="fc-body">
+                <div class="fc-row">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div><span class="fc-date">1</span><span class="fc-weekday">Thu</span></div>
+                    <div><span class="fc-date">2</span><span class="fc-weekday">Fri</span></div>
+                    <div><span class="fc-date">3</span><span class="fc-weekday">Sat</span></div>
+                    <div><span class="fc-date">4</span><span class="fc-weekday">Sun</span></div>
+                </div>
+                <div class="fc-row">
+                    <!-- ... -->
+                </div>
+                <div class="fc-row">
+                    <!-- ... -->
+                </div>
+                <div class="fc-row">
+                    <!-- ... -->
+                </div>
+                <!-- ... -->
             </div>
         </div>
-    </section>
-</div>
+        </div>
+    </Section>
+</nav>
 </body>
 </html>

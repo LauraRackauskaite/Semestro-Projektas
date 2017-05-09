@@ -29,6 +29,8 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
+
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -194,6 +196,9 @@
 <!-- Theme JavaScript -->
 <script src="../../resources/bootstrap/startbootstrap-grayscale-gh-pages/js/grayscale.min.js"></script>
 
+
 </body>
 
 </html>
+
+

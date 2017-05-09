@@ -26,17 +26,21 @@ public class VartotojasDaoImpl implements VartotojasDao{
         return auto;
     }
     public Vartotojas findByVardasAndPavarde(String vardas, String pavarde){
+
         return vartotojasRepository.findByVardasAndPavarde(vardas, pavarde);
     }
     public Vartotojas findByEpastasAndSlaptazodis(String ePastas, String slaptazodis)
     {
         return vartotojasRepository.findByEPastasAndSlaptazodis(ePastas,slaptazodis);
     }
-    public Vartotojas findByEPastas(String ePastas){
+    public Vartotojas findByEPastas(String ePastas) {
         return vartotojasRepository.findByEPastas(ePastas);
     }
-    public void registruotiNaujaVartotoja(Vartotojas vartotojas){
+    public void registruotiNaujaVartotoja(Vartotojas vartotojas) {
+
         vartotojasRepository.saveAndFlush(vartotojas);
     }
-
+    public Vartotojas findByEpastasOrSlaptazodis(String epastas, String slaptazodis){
+        return vartotojasRepository.findByEPastasOrSlaptazodis(epastas, slaptazodis);
+    }
 }

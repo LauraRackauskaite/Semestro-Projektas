@@ -118,16 +118,26 @@
             <div class="form-group row">
                 <label for="adresas" class="col-sm-2 col-form-label">Adresas</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="adresas">
+                    <input type="text" class="form-control" id="adresas" name="adresas">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="epastas">
+                    <input type="text" class="form-control" id="epastas" name="epastas">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control" id="slaptazodis" name="slaptazodis">
                 </div>
             </div>
             <button id="loginButton" class="btn btn-default btn-lg"  class="form-control">Registruotis</button>
+            <br><br>
+            <div class="label">
+                <font color="red" size="3"><b>${existError}</b></font>
+            </div>
         </div>
         <br>
         <br>

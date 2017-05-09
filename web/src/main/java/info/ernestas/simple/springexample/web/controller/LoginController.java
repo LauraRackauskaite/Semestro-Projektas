@@ -29,7 +29,7 @@ public class LoginController {
         Vartotojas asmuo = Service.tikrintiIvestusDuomenis(epastas, slaptazodis);
         if(asmuo == null) {
             model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
-            return "login";
+            return "kalendorius";
         }
         session.setAttribute("loggedInUser", asmuo);
         return "Vartotojas";

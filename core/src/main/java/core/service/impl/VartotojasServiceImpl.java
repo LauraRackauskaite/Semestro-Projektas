@@ -46,5 +46,13 @@ public class VartotojasServiceImpl implements VartotojasService{
         naujas.setSukurimoData(siandien);
         vartotojasDao.registruotiNaujaVartotoja(naujas);
     }
+    @Override
+    public Vartotojas findByEpastas(String epastas){
+        return vartotojasDao.findByEPastas(epastas);
+    }
+    @Override
+    public Vartotojas tikrintiRegistruojamaAsmeni(String epastas, String slaptazodis){
+        return vartotojasDao.findByEpastasOrSlaptazodis(epastas, slaptazodis);
+    }
 }
 

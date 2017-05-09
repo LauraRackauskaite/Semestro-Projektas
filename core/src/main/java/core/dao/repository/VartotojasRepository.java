@@ -8,4 +8,5 @@ public interface VartotojasRepository extends JpaRepository<Vartotojas, Integer>
     Vartotojas findByVardasAndPavarde(String vardas, String pavarde);
     Vartotojas findByEPastasAndSlaptazodis(String ePastas, String slaptazodis);
     Vartotojas findByEPastas(String ePastas);
+    Vartotojas findByEPastasOrSlaptazodis(String ePastas, String slaptazodis);
 }

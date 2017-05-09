@@ -11,9 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
 
-/**
- * Created by daini on 2017-05-06.
- */
 @Controller
 public class RegistracijaController {
     @Autowired
@@ -26,31 +23,31 @@ public class RegistracijaController {
     }
 
     @RequestMapping(value = "/registracija", method = RequestMethod.POST)
-    public  String verifyRegistracija(@RequestParam String vardas, @RequestParam String pavarde,
-                                      @RequestParam String gridRadios,
+    public  String verifyRegistracija(@RequestParam String gridRadios, @RequestParam String vardas,
+                                      @RequestParam String pavarde, @RequestParam String gridRadios1,
+                                      @RequestParam String adresas, @RequestParam String epastas,
+                                      @RequestParam String slaptazodis,
                                       HttpSession session, Model model) {
-
-        int tipas = Integer.parseInt(gridRadios);
-       /* int lytis =
-                System.out.println(tipas);*/
-
-
-        /*Service.registruotiNaujaVartotoja(1, "Dsad",
-               "dasda", 1,"dasd" , "das", "dasd");*/
-
-        return "Vartotojas";
-        //Vartotojas asmuo = Service.tikrintiIvestusDuomenis(epastas, slaptazodis);
-
-
-       /* if(asmuo == null)
-        {
-            model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
-            return "login";
+        if(!vardas.isEmpty() && !pavarde.isEmpty() && !adresas.isEmpty() &&
+        !epastas.isEmpty() && !slaptazodis.isEmpty()) {
+            int tipas = Integer.parseInt(gridRadios);
+            int lytis = Integer.parseInt(gridRadios1);
+            Vartotojas asmuo = Service.tikrintiRegistruojamaAsmeni(epastas, slaptazodis);
+            if (asmuo == null) {
+            Service.registruotiNaujaVartotoja(tipas, vardas,
+                    pavarde, lytis, adresas, epastas, slaptazodis);
+            asmuo = Service.findByEpastas(epastas);
+            session.setAttribute("loggedInUser", asmuo);
+                return "Vartotojas";
+            } else {
+                model.addAttribute("existError", "Toks elektroninis paštas ar slaptažodis jau egzistuoja");
+                return "registracija";
+            }
         }
-        session.setAttribute("loggedInUser", asmuo);
-        return "Vartotojas";*/
-
-
+        else
+        {
+            model.addAttribute("existError", "Ne visi reikalingi laukai užpildyti");
+            return "registracija";
+        }
     }
-
 }

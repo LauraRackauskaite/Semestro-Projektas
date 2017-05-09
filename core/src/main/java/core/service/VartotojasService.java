@@ -10,4 +10,6 @@ public interface VartotojasService {
     Vartotojas tikrintiIvestusDuomenis(String epastas, String slaptazodis);
     void registruotiNaujaVartotoja(int tipas, String vardas, String pavarde, int lytis,  String adresas,
                                    String ePastas, String slaptazodis);
+    Vartotojas findByEpastas(String epastas);
+    Vartotojas tikrintiRegistruojamaAsmeni(String epastas, String slaptazodis);
 }

@@ -29,12 +29,10 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-
 </head>
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<!-- Navigation -->
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -56,15 +54,6 @@
                 <li>
                     <a class="page-scroll" href="#about">About</a>
                 </li>
-                <li>
-                    <a class="page-scroll" href="#Prisijungti">NEveik</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/registracija/">Registracija</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/login/">Prisijungti</a>
-                </li>
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -73,35 +62,46 @@
 </nav>
 
 
-<div class="container">
-    <section id="Prisijungti" class="content-section text-center">
-        <div class="Prisijungti-section">
-            <div class="container">
-
-                <h2>Norėdami prisijungti prie paskyros suveskite duomenis</h2>
-                <form action="/login" method="post">
-                    <div class="form-group row">
-                        <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="epastas" name="epastas" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <button id="loginButton" class="btn btn-default btn-lg" class="form-control">Prisijungti</button>
-                    <br><br>
-                    <div class="label">
-                        <font color="red" size="3" >${loginError}</font>
-                    </div>
-                </form>
-
+<div class="form-group row">
+    <label for="vardas" class="col-sm-2 col-form-label">Vartotojo vardas</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="vardas" name="vardas" >
+    </div>
+</div>
+<div class="form-group row">
+    <label for="pavarde" class="col-sm-2 col-form-label">Vartotojo pavardė</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="pavarde" name="pavarde" class="form-control" >
+    </div>
+</div>
+<div class="form-group row">
+    <%--@declare id="lytis"--%><label for="lytis" class="col-sm-2 col-form-label">Lytis </label>
+    <div class="col-lg-2">
+        <div class="form-check">
+            <div class="text-left">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios1" id="lytis1" value="1" checked>
+                    Vyras
+                </label>
+                <label class="form-check-label">
+                    <input class="form-check-input" type="radio" name="gridRadios1" id="lytis2" value="2" >
+                    Moteris
+                </label>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+<div class="form-group row">
+    <label for="adresas" class="col-sm-2 col-form-label">Adresas</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="adresas" name="adresas">
+    </div>
+</div>
+<div class="form-group row">
+    <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
+    <div class="col-sm-6">
+        <input type="text" class="form-control" id="epastas" name="epastas">
+    </div>
 </div>
 </body>
 </html>

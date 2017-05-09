@@ -13,4 +13,6 @@ public interface VartotojasDao {
     Vartotojas findByEpastasAndSlaptazodis(String epastas, String slaptazodis);
     Vartotojas findByEPastas(String ePastas);
     void registruotiNaujaVartotoja(Vartotojas vartotojas);
+    Vartotojas findByEpastasOrSlaptazodis(String epastas, String slaptazodis);
 }
+
