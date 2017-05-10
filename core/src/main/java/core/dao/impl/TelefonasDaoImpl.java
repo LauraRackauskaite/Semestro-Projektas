@@ -30,4 +30,8 @@ public class TelefonasDaoImpl implements TelefonasDao{
     public  Telefonas findByVartotojoKodas(String vartotojoKodas){
         return telefonasRepository.findByVartotojoKodas(vartotojoKodas);
     }
+    @Override
+    public Telefonas registruotiTelefona(Telefonas naujas){
+        return telefonasRepository.saveAndFlush(naujas);
+    }
 }

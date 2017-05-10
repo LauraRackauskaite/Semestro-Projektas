@@ -54,5 +54,23 @@ public class VartotojasServiceImpl implements VartotojasService{
     public Vartotojas tikrintiRegistruojamaAsmeni(String epastas, String slaptazodis){
         return vartotojasDao.findByEpastasOrSlaptazodis(epastas, slaptazodis);
     }
+    @Override
+    public Vartotojas redaguotiAsmensVarda(int id, String naujas){
+        Vartotojas redaguojamas = vartotojasDao.findByVartotojoKodas(id);
+        redaguojamas.setVardas(naujas);
+    return redaguojamas;
+    }
+    @Override
+    public Vartotojas redaguotiAsmensPavarde(int id, String naujas){
+        Vartotojas redaguojamas = vartotojasDao.findByVartotojoKodas(id);
+        redaguojamas.setPavarde(naujas);
+        return redaguojamas;
+    }
+    @Override
+    public Vartotojas redaguotiAsmensAdresa(int id, String naujas){
+        Vartotojas redaguojamas = vartotojasDao.findByVartotojoKodas(id);
+        redaguojamas.setAdresas(naujas);
+        return redaguojamas;
+    }
 }
 

@@ -31,6 +31,7 @@ public class LoginController {
             model.addAttribute("loginError", "Blogai įvesti duomenys. Bandykite dar kartą");
             return "login";
         }
+
         session.setAttribute("loggedInUser", asmuo);
         return "redirect: /Vartotojas/";
     }

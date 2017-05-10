@@ -10,4 +10,5 @@ import java.util.List;
 public interface TelefonasDao {
     List<Telefonas> findAll();
     Telefonas findByVartotojoKodas(String vartotojoKodas);
+    Telefonas registruotiTelefona(Telefonas naujas);
 }

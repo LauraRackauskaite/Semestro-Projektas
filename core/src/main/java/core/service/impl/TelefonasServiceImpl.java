@@ -22,4 +22,12 @@ public class TelefonasServiceImpl implements TelefonasService{
     public List<Telefonas> findAllTelefonas() {
         return telefonasDao.findAll();
     }
+
+    @Override
+    public void redaguotiAsmensTelefona(int id, String telefonas) {
+        Telefonas naujas = new Telefonas();
+        naujas.setNumeris(telefonas);
+        naujas.setVartotojoKodas(id);
+        telefonasDao.registruotiTelefona(naujas);
+    }
 }

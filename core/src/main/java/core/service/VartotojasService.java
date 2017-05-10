@@ -12,4 +12,7 @@ public interface VartotojasService {
                                    String ePastas, String slaptazodis);
     Vartotojas findByEpastas(String epastas);
     Vartotojas tikrintiRegistruojamaAsmeni(String epastas, String slaptazodis);
+    Vartotojas redaguotiAsmensVarda(int id, String naujas);
+    Vartotojas redaguotiAsmensPavarde(int id, String naujas);
+    Vartotojas redaguotiAsmensAdresa(int id, String naujas);
 }

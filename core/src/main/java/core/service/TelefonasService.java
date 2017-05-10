@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface TelefonasService {
     List<Telefonas> findAllTelefonas();
+    void redaguotiAsmensTelefona(int id, String telefonas);
 }
