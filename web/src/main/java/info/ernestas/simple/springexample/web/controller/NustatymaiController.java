@@ -58,4 +58,11 @@ public class NustatymaiController {
         model.addAttribute("modelAdresas", vartotojas.getAdresas());
         return "redirect: /nustatymai";
     }
+
+    @RequestMapping(value = "/istrinimas", method = RequestMethod.POST)
+    public String verifyIstrinti(HttpSession session, Model model) {
+        Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
+        vartotojasService.istrintiVartotoja(vartotojas);
+        return "index";
+    }
 }

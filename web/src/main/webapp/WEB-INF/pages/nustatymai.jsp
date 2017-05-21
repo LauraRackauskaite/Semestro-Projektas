@@ -40,16 +40,6 @@
 
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 
-<script>
-    function myFunction() {
-        var txt;
-        if (confirm("Press a button!") == true) {
-            txt = "You pressed OK!";
-        } else {
-            txt = "You pressed Cancel!";
-        }
-    }
-</script>
 
 
 <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
@@ -156,26 +146,22 @@
 
 <div class="col-md-2 ">
     <img src="http://websamplenow.com/30/userprofile/images/avatar.jpg" class="img-responsive img-thumbnail ">
-
-    <button type="submit" class="btn btn-danger" value="Button 1"><span class="glyphicon glyphicon-thumbs-up" onclick=></span>Ištrinti</button>
-    <button class="glyphicon glyphicon-thumbs-up" class="btn btn-danger" onclick="myFunction()">Try it</button>
+    <button class="btn btn-danger" class="btn btn-danger"  onclick="myFunction()">Ištrinti</button>
 
     <p id="demo"></p>
 
     <script>
         function myFunction() {
-            var txt;
-            if (confirm("Press a button!") == true) {
-                txt = "You pressed OK!";
+            if (confirm("Ar  tikrai norite ištrinti save") == true) {
+                document.getElementById("istrinti").submit();
             } else {
-                txt = "You pressed Cancel!";
             }
             document.getElementById("demo").innerHTML = txt;
         }
     </script>
 </div>
-
-</div>
+        <form id="istrinti" name="istrinti" action="/istrinimas" method="post"></form>
+    </div>
 </div>
 <!-- jQuery Version 1.11.1 -->
 <script src="js/jquery.js"></script>

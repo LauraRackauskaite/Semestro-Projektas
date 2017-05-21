@@ -33,6 +33,11 @@ public class LoginController {
         }
 
         session.setAttribute("loggedInUser", asmuo);
-        return "redirect: /Vartotojas/";
+        if(asmuo.getVartotojoTipoKodas() == 1)
+            return "redirect: /Vartotojas/";
+        else if(asmuo.getVartotojoTipoKodas() == 2)
+            return "redirect: /Organizatorius/";
+        else
+            return "redirect: /Administratorius/";
     }
 }

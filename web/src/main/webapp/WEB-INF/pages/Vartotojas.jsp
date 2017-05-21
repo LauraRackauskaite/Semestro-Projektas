@@ -56,10 +56,13 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/nustatymai">nustatymai</a>
+                    <a class="page-scroll" href="/Renginiai">Renginiai</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#about">About</a>
+                    <a class="page-scroll" href="/nustatymai">Nustatymai</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">Apie</a>
                 </li>
             </ul>
         </div>

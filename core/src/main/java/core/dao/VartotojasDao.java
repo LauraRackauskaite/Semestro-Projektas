@@ -15,5 +15,6 @@ public interface VartotojasDao {
     void registruotiNaujaVartotoja(Vartotojas vartotojas);
     Vartotojas findByEpastasOrSlaptazodis(String epastas, String slaptazodis);
     Vartotojas findByVartotojoKodas(int id);
+    Vartotojas deleteVartotojasByVartotojoKodas(int id);
 }
 

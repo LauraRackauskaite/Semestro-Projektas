@@ -15,4 +15,5 @@ public interface VartotojasService {
     Vartotojas redaguotiAsmensVarda(int id, String naujas);
     Vartotojas redaguotiAsmensPavarde(int id, String naujas);
     Vartotojas redaguotiAsmensAdresa(int id, String naujas);
+    Vartotojas istrintiVartotoja(Vartotojas vartotojas);
 }

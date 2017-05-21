@@ -38,7 +38,12 @@ public class RegistracijaController {
                     pavarde, lytis, adresas, epastas, slaptazodis);
             asmuo = Service.findByEpastas(epastas);
             session.setAttribute("loggedInUser", asmuo);
+            if(asmuo.getVartotojoTipoKodas() == 1)
                 return "Vartotojas";
+            else if(asmuo.getVartotojoTipoKodas() == 2)
+                return "Organizatorius";
+            else
+                return "Administratorius";
             } else {
                 model.addAttribute("existError", "Toks elektroninis paštas ar slaptažodis jau egzistuoja");
                 return "registracija";

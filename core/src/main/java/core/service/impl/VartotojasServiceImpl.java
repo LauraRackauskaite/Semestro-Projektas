@@ -72,5 +72,12 @@ public class VartotojasServiceImpl implements VartotojasService{
         redaguojamas.setAdresas(naujas);
         return redaguojamas;
     }
+    @Override
+    public Vartotojas istrintiVartotoja(Vartotojas vartotojas)
+    {
+        int id  = vartotojas.getVartotojoKodas();
+        vartotojasDao.deleteVartotojasByVartotojoKodas(id);
+        return null;
+    }
 }
 
