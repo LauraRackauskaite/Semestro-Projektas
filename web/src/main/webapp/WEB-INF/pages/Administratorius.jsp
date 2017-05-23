@@ -59,7 +59,7 @@
                     <a class="page-scroll" href="/Renginiai">adminis</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/nustatymai">Nustatymai</a>
+                    <a class="page-scroll" href="/AdminNustatymai">Nustatymai</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="#about">Apie</a>

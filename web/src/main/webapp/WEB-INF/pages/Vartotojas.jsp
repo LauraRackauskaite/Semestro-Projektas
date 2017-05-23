@@ -58,6 +58,9 @@
                 <li>
                     <a class="page-scroll" href="/Renginiai">Renginiai</a>
                 </li>
+                <li >
+                        <a class="page-scroll" href="/VartotojasRezervavimai">Tavo Rezervacijos</a>
+                </li>
                 <li>
                     <a class="page-scroll" href="/nustatymai">Nustatymai</a>
                 </li>

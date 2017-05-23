@@ -8,9 +8,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * Created by daini on 2017-05-04.
- */
+
 @Repository
 public class AtsiliepimasDaoImpl implements AtsiliepimasDao{
     @Autowired

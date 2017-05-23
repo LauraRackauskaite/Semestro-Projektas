@@ -1,4 +1,5 @@
 package core.service;
+import core.model.Renginys;
 import core.model.Vartotojas;
 
 import java.util.List;
@@ -16,4 +17,13 @@ public interface VartotojasService {
     Vartotojas redaguotiAsmensPavarde(int id, String naujas);
     Vartotojas redaguotiAsmensAdresa(int id, String naujas);
     Vartotojas istrintiVartotoja(Vartotojas vartotojas);
+    List<Vartotojas>GetAllVartotojasAtaskaita();
+    List<String> GetAllEsamuVartotojuTipus();
+    List<String> GetAllEsamuLytis();
+    List<Integer> GetAllEsamuRezervacijas();
+    Integer SkaicuotiAsmenis(int tipoKodas);
+    Integer SkaicuotiVisasRezervacijas();
+    List<Renginys> gautiVartotojoRenginius(int vartotojoKodas);
+    List<String> gautiVartotojoKategorijasRenginius(int vartotojoKodas);
+    List<String> gautiVartotojovietasRenginiuose(int vartotojoKodas);
 }

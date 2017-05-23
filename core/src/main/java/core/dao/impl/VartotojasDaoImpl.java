@@ -18,13 +18,9 @@ public class VartotojasDaoImpl implements VartotojasDao{
     @Override
     public List<Vartotojas> findAll(){
         List<Vartotojas> auto = vartotojasRepository.findAll();
-        for(int i = 0; i < auto.size(); i++)
-        {
-            Vartotojas a = auto.get(i);
-
-        }
         return auto;
     }
+
     public Vartotojas findByVardasAndPavarde(String vardas, String pavarde){
 
         return vartotojasRepository.findByVardasAndPavarde(vardas, pavarde);
@@ -49,5 +45,8 @@ public class VartotojasDaoImpl implements VartotojasDao{
     public Vartotojas deleteVartotojasByVartotojoKodas(int id) {
         vartotojasRepository.deleteVartotojasByVartotojoKodas(id);
         return  null;
+    }
+    public Integer countVartotojasByVartotojoTipoKodas(int n){
+        return  vartotojasRepository.countVartotojasByVartotojoTipoKodas(n);
     }
 }

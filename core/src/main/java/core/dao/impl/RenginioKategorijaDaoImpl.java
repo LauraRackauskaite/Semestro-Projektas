@@ -31,4 +31,8 @@ public class RenginioKategorijaDaoImpl implements RenginioKategorijaDao{
     public RenginioKategorija findByPavadinimas(String pavadinimas){
         return renginioKategorijaRepository.findByPavadinimas(pavadinimas);
     }
+    @Override
+    public RenginioKategorija findRenginioKategorijaByRenginioKategorijosNumeris(int renginioKategorijosNumeris){
+        return renginioKategorijaRepository.findRenginioKategorijaByRenginioKategorijosNumeris(renginioKategorijosNumeris);
+    }
 }

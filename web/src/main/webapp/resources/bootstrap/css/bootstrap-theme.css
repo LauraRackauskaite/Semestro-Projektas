@@ -187,8 +187,9 @@ optgroup {
   font-weight: bold;
 }
 table {
+  border: 1px solid green;
   border-collapse: collapse;
-  border-spacing: 0;
+  width:100%;
 }
 td,
 th {
@@ -260,6 +261,10 @@ th {
   .table td,
   .table th {
     background-color: #fff !important;
+  }
+  table td.shrink,
+  table th.shrink{
+    white-space:nowrap
   }
   .table-bordered th,
   .table-bordered td {

@@ -10,4 +10,5 @@ import java.util.List;
 public interface RenginioKategorijaDao {
     List<RenginioKategorija> findAll();
     RenginioKategorija findByPavadinimas(String pavadinimas);
+    RenginioKategorija findRenginioKategorijaByRenginioKategorijosNumeris(int renginioKategorijosNumeris);
 }

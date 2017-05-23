@@ -10,4 +10,5 @@ import java.util.List;
 public interface RezervacijaDao {
     List<Rezervavimas> findAll();
    Rezervavimas findByNumerisSarase(int numerisSarase);
+   List<Rezervavimas> findAllByVartotojoKodas(int vartotojoKodas);
 }

@@ -60,15 +60,6 @@
                     <a class="page-scroll" href="#about">About</a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="#download">Download</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#contact">Contact</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="#Prisijungti">NEveik</a>
-                </li>
-                <li>
                     <a class="page-scroll" href="/registracija/">Registracija</a>
                 </li>
                 <li>
@@ -87,7 +78,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Renginių rezervavimo ir paieškos IS</h1>
+                    <div class="brand-heading">Renginių rezervavimo ir paieškos IS</div>
                     <p1 class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)</p1>
                         <br>Sukurta Grupės Trepsiukai</br>
                     <a href="#about" class="btn btn-circle page-scroll">
@@ -109,77 +100,12 @@
     </div>
 </section>
 
-<!-- Download Section -->
-<section id="download" class="content-section text-center">
-    <div class="download-section">
-        <div class="container">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2>Download `rayscale</h2>
-                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
-            </div>
-        </div>
-    </div>
-</section>
 
-
-
-<!-- Prisijungti Section -->
-<section id="Prisijungti" class="content-section text-center">
-
-    <div class="Prisijungti-section">
-        <div class="container">
-            ${loginError}
-            <form class="col-lg-8 col-lg-offset-2">
-                <h2>Norėdami prisijungti prie paskyros suveskite duomenis</h2>
-                <form action="/login" method="post">
-                    <div class="form-group row">
-                        <label for="epastas" class="col-sm-2 col-form-label">Elektroninis paštas</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="epastas" name="epastas" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
-                        <div class="col-sm-6">
-                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
-                        </div>
-                    </div>
-                    <button id="loginButton" class="btn btn-default btn-lg" class="form-control"> Prisijungti</button>
-                </form>>
-            </form>
-        </div>
-    </div>
-</section>
-
-
-<!-- Contact Section -->
-<section id="contact" class="container content-section text-center">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2">
-            <h2>Contact Start Bootstrap</h2>
-            <p>Feel free to email us to provide some feedback on our templates, give us suggestions for new templates and themes, or to just say hello!</p>
-            <p><a href="mailto:feedback@startbootstrap.com">feedback@startbootstrap.com</a>
-            </p>
-            <ul class="list-inline banner-social-buttons">
-                <li>
-                    <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
-                </li>
-                <li>
-                    <a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
-                </li>
-                <li>
-                    <a href="https://plus.google.com/+Startbootstrap/posts" class="btn btn-default btn-lg"><i class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</section>
 
 <!-- Footer -->
 <footer>
     <div class="container text-center">
-        <p>Copyright &copy; Your Website 2016</p>
+        <p>Copyright &copy; UAB Dainiaus Saldainiaus ir KO ( ͡° ͜ʖ ͡°)</p>
     </div>
 </footer>
 

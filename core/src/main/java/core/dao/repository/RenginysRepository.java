@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface RenginysRepository extends JpaRepository<Renginys, Integer>{
     Renginys findByPavadinimas(String renginioPavadinimas);
+    Renginys findRenginysByRenginioKodas(int renginioKodas);
 }

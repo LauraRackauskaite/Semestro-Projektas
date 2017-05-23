@@ -30,4 +30,10 @@ public class RezervacijaDaoImpl implements RezervacijaDao{
     public Rezervavimas findByNumerisSarase(int numerisSarase){
         return rezervavimasRepository.findByNumerisSarase(numerisSarase);
     }
+    @Override
+    public List<Rezervavimas> findAllByVartotojoKodas(int vartotojoKodas){
+        return rezervavimasRepository.findAllByVartotojoKodas(vartotojoKodas);
+    }
+
+
 }

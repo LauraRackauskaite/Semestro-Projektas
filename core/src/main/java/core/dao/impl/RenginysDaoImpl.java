@@ -31,4 +31,8 @@ public class RenginysDaoImpl implements RenginysDao {
     public Renginys findByPavadinimas(String renginioPavadinimas){
         return renginysRepository.findByPavadinimas(renginioPavadinimas);
     }
+    @Override
+    public Renginys findRenginysByRenginioKodas(int renginioKodas){
+        return renginysRepository.findRenginysByRenginioKodas(renginioKodas);
+    }
 }

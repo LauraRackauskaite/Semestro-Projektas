@@ -32,4 +32,8 @@ public class RenginioVietosTipasDaoImpl implements RenginioVietosTipasDao{
    public RenginioVietosTipas findByPavadinimas(String pavadinimas){
         return renginioVietosTipasRepository.findByPavadinimas(pavadinimas);
     }
+    @Override
+    public RenginioVietosTipas findRenginioVietosTipasByVietosTipoNumeris(int vietosTipoNumeris){
+        return renginioVietosTipasRepository.findRenginioVietosTipasByVietosTipoNumeris(vietosTipoNumeris);
+    }
 }

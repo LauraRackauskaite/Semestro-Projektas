@@ -1,5 +1,6 @@
 package core.service;
 import core.model.RenginioKategorija;
+import core.model.RenginioVietosTipas;
 
 import java.util.List;
 /**
@@ -7,4 +8,5 @@ import java.util.List;
  */
 public interface RenginioKategorijaService {
     List<RenginioKategorija> findAllRenginioKategorija();
+    List<RenginioVietosTipas> findAllRenginioVietosTipas();
 }
