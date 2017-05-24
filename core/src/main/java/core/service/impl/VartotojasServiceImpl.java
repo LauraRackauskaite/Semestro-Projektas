@@ -28,12 +28,16 @@ public class VartotojasServiceImpl implements VartotojasService{
     @Autowired
     private RezervacijaDao rezervacijaDao;
 
+
     @Autowired
     private RenginysDao renginysDao;
     @Autowired
     private RenginioKategorijaDao renginioKategorijaDao;
     @Autowired
     private RenginioVietosTipasDao renginioVietosTipasDao;
+    @Autowired
+    private VietaDao vietaDao;
+
     @Override
     public List<Vartotojas> findAllVartotojas() {
         return vartotojasDao.findAll();
@@ -170,17 +174,42 @@ public class VartotojasServiceImpl implements VartotojasService{
     }
 
     @Override
-    public List<String> gautiVartotojovietasRenginiuose(int vartotojoKodas){
+    public List<Vieta> gautiVartotojovietasRenginiuose(int vartotojoKodas){
         List<Rezervavimas> gautiRezervavimus = rezervacijaDao.findAllByVartotojoKodas(vartotojoKodas);
         List<Renginys> gautiVisusRenginius = renginysDao.findAll();
         List<Renginys> gautiAtrinktusRenginus = new ArrayList<Renginys>();
-        List<String> gautiAtrinktasKategorijas = new ArrayList<String>();
+        List<Vieta> gautiAtrinktasvietas = new ArrayList<Vieta>();
         for(int i = 0; i < gautiRezervavimus.size(); i++)
             gautiAtrinktusRenginus.add(renginysDao.findRenginysByRenginioKodas(gautiRezervavimus.get(i).getRenginioKodas()));
         for(int i = 0; i < gautiAtrinktusRenginus.size(); i++)
-        {}
-        return gautiAtrinktasKategorijas;
+        {
+            gautiAtrinktasvietas.add(vietaDao.findVietaByVietosNumeris(gautiAtrinktusRenginus.get(i).getRenginioVietosKodas()));
+        }
+        return gautiAtrinktasvietas;
     }
 
+    @Override
+    public List<String> gautiVartotojovietuTipus(int vartotojoKodas)
+    {
+        List<Rezervavimas> gautiRezervavimus = rezervacijaDao.findAllByVartotojoKodas(vartotojoKodas);
+        List<Renginys> gautiVisusRenginius = renginysDao.findAll();
+        List<Renginys> gautiAtrinktusRenginus = new ArrayList<Renginys>();
+        List<String> gautiAtrinktusTipus = new ArrayList<String>();
+        for(int i = 0; i < gautiRezervavimus.size(); i++)
+            gautiAtrinktusRenginus.add(renginysDao.findRenginysByRenginioKodas(gautiRezervavimus.get(i).getRenginioKodas()));
+        for(int i = 0; i < gautiAtrinktusRenginus.size(); i++)
+        {
+            gautiAtrinktusTipus.add(renginioVietosTipasDao.
+                    findRenginioVietosTipasByVietosTipoNumeris(gautiAtrinktusRenginus.
+                            get(i).getRenginioTipoKodas()).
+                    getPavadinimas());
+        }
+        return gautiAtrinktusTipus;
+    }
+    @Override
+   public void TrintiRezervacija(int renginioIndex, int vartotojoKodas){
+       Rezervavimas rezervavimas = rezervacijaDao.findRezervavimasByRenginioKodasAndVartotojoKodas(renginioIndex, vartotojoKodas);
+       rezervacijaDao.deleteRezervavimasByRezervavimoNumeris(rezervavimas.getRezervavimoNumeris());
+    }
 }
 

@@ -1,6 +1,8 @@
 package core.service;
 import core.model.Renginys;
+import core.model.Rezervavimas;
 import core.model.Vartotojas;
+import core.model.Vieta;
 
 import java.util.List;
 /**
@@ -25,5 +27,7 @@ public interface VartotojasService {
     Integer SkaicuotiVisasRezervacijas();
     List<Renginys> gautiVartotojoRenginius(int vartotojoKodas);
     List<String> gautiVartotojoKategorijasRenginius(int vartotojoKodas);
-    List<String> gautiVartotojovietasRenginiuose(int vartotojoKodas);
+    List<Vieta> gautiVartotojovietasRenginiuose(int vartotojoKodas);
+    List<String> gautiVartotojovietuTipus(int vartotojoKodas);
+    void TrintiRezervacija(int renginioIndex, int vartotojoKodas);
 }

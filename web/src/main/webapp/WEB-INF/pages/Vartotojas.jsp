@@ -56,7 +56,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/Renginiai">Renginiai</a>
+                    <a class="page-scroll" href="/VartotojasRenginiai">Esami Renginiai</a>
                 </li>
                 <li >
                         <a class="page-scroll" href="/VartotojasRezervavimai">Tavo Rezervacijos</a>
@@ -66,6 +66,9 @@
                 </li>
                 <li>
                     <a class="page-scroll" href="#about">Apie</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="/index">Atsijungti</a>
                 </li>
             </ul>
         </div>

@@ -10,4 +10,7 @@ import java.util.List;
 public interface RezervavimasRepository extends JpaRepository<Rezervavimas, Integer>{
     Rezervavimas findByNumerisSarase(int numerisSarase);
     List<Rezervavimas> findAllByVartotojoKodas(int vartotojoKodas);
+    Rezervavimas findRezervavimasByRenginioKodasAndVartotojoKodas(int renginioKodas, int vartotojoKodas);
+    void deleteRezervavimasByRezervavimoNumeris(int rezervavimoNumeris);
+    List<Rezervavimas> findAllByRenginioKodas(int renginioKodas);
 }

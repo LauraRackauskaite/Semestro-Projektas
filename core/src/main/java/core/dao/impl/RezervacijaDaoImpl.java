@@ -34,6 +34,20 @@ public class RezervacijaDaoImpl implements RezervacijaDao{
     public List<Rezervavimas> findAllByVartotojoKodas(int vartotojoKodas){
         return rezervavimasRepository.findAllByVartotojoKodas(vartotojoKodas);
     }
-
-
+    @Override
+   public Rezervavimas findRezervavimasByRenginioKodasAndVartotojoKodas(int renginioKodas, int vartotojoKodas){
+        return rezervavimasRepository.findRezervavimasByRenginioKodasAndVartotojoKodas(renginioKodas, vartotojoKodas);
+    }
+    @Override
+    public  void deleteRezervavimasByRezervavimoNumeris(int rezervavimoNumeris){
+       rezervavimasRepository.deleteRezervavimasByRezervavimoNumeris(rezervavimoNumeris);
+    }
+    @Override
+    public void saveAndFlushRezervavimas(Rezervavimas rezervavimas){
+        rezervavimasRepository.saveAndFlush(rezervavimas);
+    }
+    @Override
+    public List<Rezervavimas> findAllByRenginioKodas(int renginioKodas){
+        return rezervavimasRepository.findAllByRenginioKodas(renginioKodas);
+    }
 }

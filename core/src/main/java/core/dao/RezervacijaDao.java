@@ -11,4 +11,8 @@ public interface RezervacijaDao {
     List<Rezervavimas> findAll();
    Rezervavimas findByNumerisSarase(int numerisSarase);
    List<Rezervavimas> findAllByVartotojoKodas(int vartotojoKodas);
+    Rezervavimas findRezervavimasByRenginioKodasAndVartotojoKodas(int renginioKodas, int vartotojoKodas);
+    void deleteRezervavimasByRezervavimoNumeris(int rezervavimoNumeris);
+    void saveAndFlushRezervavimas(Rezervavimas rezervavimas);
+    List<Rezervavimas> findAllByRenginioKodas(int renginioKodas);
 }

@@ -81,7 +81,7 @@
                     <th>
                         <header>
 
-                            <h2> Tavo Rezervavimai</h2>
+                            <h2> Esami Renginiai</h2>
                         </header>
                     </th>
                 </tr>
@@ -97,11 +97,11 @@
                             <th>Renginio trukmė</th>
                             <th>Renginio vieta</th>
                             <th>Renginio vietos tipas</th>
-                            <th>Atšaukti Rezervavimą</th>
+                            <th>Rezervuoti Vietą</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <c:forEach var="varto" items="${vartoRengi}" varStatus="status" >
+                        <c:forEach var="varto" items="${visiRenginiai}" varStatus="status" >
                             <tr>
                                 <td>${varto.pavadinimas}</td>
                                 <td>${kategorijos[status.index]}</td>
@@ -116,9 +116,12 @@
                                 <td>${vietuTipai[status.index]}</td>
                                 <td>
                                     <form
-                                      id="form1" name="form1" method="post" action="/VartotojasRezervavimai" onsubmit=" return window.confirm('Ar tikrai norite atšaukti rezervaciją?');">
-                                        <button type="submit" name="RenginioIndeksas"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='VartotojasRezervavimai?flag=1&act=1';" />Atšaukti</form>
+                                            id="form1" name="form1" method="post" action="/VartotojasRenginiai" onsubmit=" return window.confirm('Ar tikrai norite rezervuotis į renginį?');">
+                                        <button type="submit" name="RenginioIndeksas"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='VartotojasRenginiai?flag=1&act=1';" ${gautiMygtukus[status.index]}/>Rezervuotis</form>
                                     </form>
+                                </td>
+                                <td>
+                                    <font color="red">${gautiIspejimus[status.index]}</font>
                                 </td>
                             </tr>
                         </c:forEach>

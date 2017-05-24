@@ -6,4 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
  */
 public interface VietaRepository extends JpaRepository<Vieta, Integer>{
     Vieta findByGatvesPavadinimasAndMiestas(String gatvesPavadinimas, String miestas);
+    Vieta findVietaByVietosNumeris(int vietosNumeris);
 }

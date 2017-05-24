@@ -17,5 +17,6 @@ public interface VartotojasDao {
     Vartotojas findByVartotojoKodas(int id);
     Vartotojas deleteVartotojasByVartotojoKodas(int id);
     Integer countVartotojasByVartotojoTipoKodas(int n);
+
 }
 

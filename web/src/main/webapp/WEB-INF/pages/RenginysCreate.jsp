@@ -72,11 +72,10 @@
     <!-- /.container -->
 </nav>
 <section id="renginioRegistracija" class="content-section text-center">
-    <form action='/renginioRegistracija' method="post">
+    <form action='/RenginysCreate' method="post">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Norėdami užregistruoti renginį užpildykite pateiktą formą</h2>
             <div class="form-group row">
-                <%--@declare id="renginioKategorijosKodas"--%><label for="renginioKategorijosKodas" class="col-sm-2 col-form-label">Renginio kategorija </label>
                 <div class="col-lg-2">
                     <font color="black">
                     <select name="country">

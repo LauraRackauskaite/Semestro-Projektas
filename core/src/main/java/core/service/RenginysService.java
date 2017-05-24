@@ -1,5 +1,6 @@
 package core.service;
 import core.model.Renginys;
+import core.model.Vieta;
 
 import java.util.List;
 /**
@@ -7,4 +8,10 @@ import java.util.List;
  */
 public interface RenginysService {
     List<Renginys> findAllRenginys();
+    List<String> gautiVisasRenginiuKategorijas();
+    List<String> gautiVisasRenginiuTipuVietas();
+    List<Vieta> gautiVisasEsamasVietas();
+    void RezervuotisVieta(int renginioIndeksas, int vartotojoindeksas);
+    List<String> gautiMygtukus(int vartotojokodas);
+    List<String> gautiIspejimus(int vartotojoKodas);
 }

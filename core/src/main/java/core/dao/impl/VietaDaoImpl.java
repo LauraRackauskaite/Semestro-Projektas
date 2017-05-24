@@ -29,4 +29,9 @@ public class VietaDaoImpl implements VietaDao{
     public Vieta findByGatvesPavadinimasAndMiestas(String gatvesPavadinimas, String miestas){
     return vietaRepository.findByGatvesPavadinimasAndMiestas(gatvesPavadinimas, miestas);
     }
+
+    @Override
+    public Vieta findVietaByVietosNumeris(int vietosNumeris){
+        return vietaRepository.findVietaByVietosNumeris(vietosNumeris);
+    }
 }

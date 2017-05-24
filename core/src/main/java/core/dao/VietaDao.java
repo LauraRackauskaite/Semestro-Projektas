@@ -10,4 +10,5 @@ import java.util.List;
 public interface VietaDao {
     List<Vieta> findAll();
     Vieta findByGatvesPavadinimasAndMiestas(String gatvesPavadinimas, String miestas);
+    Vieta findVietaByVietosNumeris(int vietosNumeris);
 }
