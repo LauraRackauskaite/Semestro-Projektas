@@ -10,4 +10,5 @@ import java.util.List;
 public interface RenginioBusenaDao {
     List<RenginioBusena> findAll();
     RenginioBusena findByBusenosPavadinimas(String pavadinimas);
+    RenginioBusena findRenginioBusenaByRenginioBusenosNumeris(int renginioBusenosNumeris);
 }

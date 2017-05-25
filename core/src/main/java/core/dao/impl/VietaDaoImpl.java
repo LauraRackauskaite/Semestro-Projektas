@@ -34,4 +34,8 @@ public class VietaDaoImpl implements VietaDao{
     public Vieta findVietaByVietosNumeris(int vietosNumeris){
         return vietaRepository.findVietaByVietosNumeris(vietosNumeris);
     }
+    @Override
+    public void saveAndFlush(Vieta vieta){
+        vietaRepository.saveAndFlush(vieta);
+    }
 }

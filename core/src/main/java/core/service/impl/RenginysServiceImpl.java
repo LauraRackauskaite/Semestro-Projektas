@@ -1,5 +1,6 @@
 package core.service.impl;
 import core.dao.*;
+import core.model.RenginioBusena;
 import core.model.Renginys;
 import core.model.Rezervavimas;
 import core.model.Vieta;
@@ -12,9 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by daini on 2017-05-03.
- */
+
 @Service
 @Transactional
 public class RenginysServiceImpl implements RenginysService{
@@ -30,7 +29,8 @@ public class RenginysServiceImpl implements RenginysService{
     private VietaDao vietaDao;
     @Autowired
     private RezervacijaDao rezervacijaDao;
-
+    @Autowired
+    private RenginioBusenaDao renginioBusenaDao;
     @Override
     public List<Renginys> findAllRenginys() {
         return renginysDao.findAll();
@@ -105,6 +105,57 @@ public class RenginysServiceImpl implements RenginysService{
                 gautiIspejimus.add("Užrezervuota");
         }
         return gautiIspejimus;
+    }
+
+    @Override
+    public List<Renginys> findAllOrganizatoriausRenginiai(int organizatoriausKodas){
+      return renginysDao.findAllByOrganizatoriausKodas(organizatoriausKodas);
+    }
+
+    @Override
+    public List<String> findAllOrganizatoriausKategorijos(int organizatoriausKodas){
+        List<Renginys> visosKategorijos = renginysDao.findAllByOrganizatoriausKodas(organizatoriausKodas);
+       List<String> atrinktosKategorijos = new ArrayList<String>();
+        for(int i = 0; i < visosKategorijos.size(); i++)
+            atrinktosKategorijos.add(renginioKategorijaDao.
+                    findRenginioKategorijaByRenginioKategorijosNumeris(visosKategorijos.get(i).
+                            getRenginioKategorijosKodas()).getPavadinimas());
+        return atrinktosKategorijos;
+    }
+    @Override
+    public List<String> findAllOrganizatoriausVietosTipai(int organizatoriausKodas)
+    {
+        List<Renginys> visosKategorijos = renginysDao.findAllByOrganizatoriausKodas(organizatoriausKodas);
+        List<String> atrinktiVietosTipai= new ArrayList<String>();
+        for(int i = 0; i < visosKategorijos.size(); i++)
+            atrinktiVietosTipai.add(renginioVietosTipasDao.findRenginioVietosTipasByVietosTipoNumeris(visosKategorijos.
+                    get(i).getRenginioTipoKodas()).getPavadinimas());
+    return atrinktiVietosTipai;
+    }
+    @Override
+    public List<Vieta> findAllOrganizatoriausVietos(int organizatoriausKodas){
+        List<Renginys> visosKategorijos = renginysDao.findAllByOrganizatoriausKodas(organizatoriausKodas);
+        List<Vieta> atrinktosVietos = new ArrayList<Vieta>();
+        for(int i = 0; i < visosKategorijos.size(); i++)
+            atrinktosVietos.add(vietaDao.findVietaByVietosNumeris(visosKategorijos.get(i).getRenginioVietosKodas()));
+        return atrinktosVietos;
+    }
+    @Override
+    public List<String> findAllOrganizatoriausBusenas(int organizatoriausKodas){
+        List<Renginys> visosKategorijos = renginysDao.findAllByOrganizatoriausKodas(organizatoriausKodas);
+        List<String> atrinktosBusenos = new ArrayList<String>();
+        for(int i = 0; i < visosKategorijos.size(); i++)
+            atrinktosBusenos.add(renginioBusenaDao.findRenginioBusenaByRenginioBusenosNumeris(visosKategorijos.get(i).
+                    getRenginioBusenosKodas()).getPavadinimas());
+        return atrinktosBusenos;
+    }
+    @Override
+    public void pasalintiOrganizatoriausRengini(int renginioIndeksas, int vartotojoKodas){
+       rezervacijaDao.deleteAllByRenginioKodas(renginioIndeksas);
+    }
+    @Override
+    public Renginys findRenginysByRenginioKodas(int renginioKodas){
+       return renginysDao.findRenginysByRenginioKodas(renginioKodas);
     }
 }
 

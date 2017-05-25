@@ -7,10 +7,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
-
-/**
- * Created by daini on 2017-05-03.
- */
 @Service
 @Transactional
 public class RenginioVietosTipasServiceImpl implements RenginioVietosTipasService{
@@ -21,5 +17,10 @@ public class RenginioVietosTipasServiceImpl implements RenginioVietosTipasServic
     @Override
     public List<RenginioVietosTipas> findAllRenginioVietosTipas() {
         return renginioVietosTipasDao.findAll();
+    }
+
+    @Override
+    public RenginioVietosTipas findRenginioVietosTipasByVietosTipoNumeris(int vietosTipoNumeris){
+        return renginioVietosTipasDao.findRenginioVietosTipasByVietosTipoNumeris(vietosTipoNumeris);
     }
 }

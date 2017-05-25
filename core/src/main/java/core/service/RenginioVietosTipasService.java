@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface RenginioVietosTipasService {
     List<RenginioVietosTipas> findAllRenginioVietosTipas();
+    RenginioVietosTipas findRenginioVietosTipasByVietosTipoNumeris(int vietosTipoNumeris);
 }

@@ -15,4 +15,5 @@ public interface RezervacijaDao {
     void deleteRezervavimasByRezervavimoNumeris(int rezervavimoNumeris);
     void saveAndFlushRezervavimas(Rezervavimas rezervavimas);
     List<Rezervavimas> findAllByRenginioKodas(int renginioKodas);
+    void deleteAllByRenginioKodas(int renginioKodas);
 }

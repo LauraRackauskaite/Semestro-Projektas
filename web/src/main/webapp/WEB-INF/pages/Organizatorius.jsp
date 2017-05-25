@@ -59,6 +59,9 @@
                     <a class="page-scroll" href="/RenginysCreate">Sukurti renginį</a>
                 </li>
                 <li>
+                    <a class="page-scroll" href="/OrganizatoriusRenginiai">Tavo sukurti renginiai</a>
+                </li>
+                <li>
                     <a class="page-scroll" href="/nustatymai">Nustatymai</a>
                 </li>
                 <li>
@@ -77,7 +80,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2">
-                    <h1 class="brand-heading">Sveikas ${loggedInUser.vardas}</h1>
+                    <h1 >Sveikas ${loggedInUser.vardas}</h1>
                     <p class="intro-text">Susirask renginį ir užsirezervuok vietą dabar;)
                         <br>Sukurta Grupės Trepsiukai</p>
                     <a href="#about" class="btn btn-circle page-scroll">

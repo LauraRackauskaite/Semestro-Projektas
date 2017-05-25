@@ -11,4 +11,7 @@ public interface RenginysDao {
     List<Renginys> findAll();
     Renginys findByPavadinimas(String renginioPavadinimas);
     Renginys findRenginysByRenginioKodas(int renginioKodas);
+    void saveAndFlush(Renginys renginys);
+    List<Renginys> findAllByOrganizatoriausKodas(int organizatoriausKodas);
+    void renginysDelete(Renginys renginys);
 }

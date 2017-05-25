@@ -130,7 +130,7 @@
             <div class="form-group row">
                 <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="slaptazodis" name="slaptazodis">
+                    <input type="password" class="form-control" id="slaptazodis" name="slaptazodis">
                 </div>
             </div>
             <button id="loginButton" class="btn btn-default btn-lg"  class="form-control">Registruotis</button>

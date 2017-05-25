@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.Date;
 import java.util.List;
 
@@ -32,10 +35,17 @@ public class RenginysCreateController {
         return "RenginysCreate";
     }
     @RequestMapping(value = "/RenginysCreate", method = RequestMethod.POST)
-    public  String CreateRenginys(
+    public  String CreateRenginys( @RequestParam int kategory,
+                                   @RequestParam String pavadinimas,
+                                  @RequestParam String trumpasAprasymas, @RequestParam String renginioData,
+                                  @RequestParam String renginioLaikas, @RequestParam String renginioTrukme,
+                                  @RequestParam int tip, @RequestParam String gatve, @RequestParam String miestas,
+                                   @RequestParam int namNumeris,
                                   HttpSession session, Model model) {
+        DateFormat formatter = new SimpleDateFormat("HH:mm");
         Vartotojas organizatorius = (Vartotojas) session.getAttribute("loggedInUser");
-
+        renginioKategorijaService.CreateEvent(kategory, pavadinimas, trumpasAprasymas, renginioData, renginioLaikas, renginioTrukme,
+                tip,gatve, miestas, namNumeris, organizatorius.getVartotojoKodas());
         return "Organizatorius";
     }
 }

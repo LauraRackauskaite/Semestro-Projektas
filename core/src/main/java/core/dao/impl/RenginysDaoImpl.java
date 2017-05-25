@@ -35,4 +35,17 @@ public class RenginysDaoImpl implements RenginysDao {
     public Renginys findRenginysByRenginioKodas(int renginioKodas){
         return renginysRepository.findRenginysByRenginioKodas(renginioKodas);
     }
+    @Override
+    public void saveAndFlush(Renginys renginys){
+         renginysRepository.saveAndFlush(renginys);
+    }
+    @Override
+    public  List<Renginys> findAllByOrganizatoriausKodas(int organizatoriausKodas){
+        return renginysRepository.findAllByOrganizatoriausKodas(organizatoriausKodas);
+    }
+    @Override
+    public void renginysDelete(Renginys renginys){
+        renginysRepository.delete(renginys.getRenginioKodas());
+    }
+
 }

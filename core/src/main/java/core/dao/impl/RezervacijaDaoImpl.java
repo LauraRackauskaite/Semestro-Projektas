@@ -50,4 +50,8 @@ public class RezervacijaDaoImpl implements RezervacijaDao{
     public List<Rezervavimas> findAllByRenginioKodas(int renginioKodas){
         return rezervavimasRepository.findAllByRenginioKodas(renginioKodas);
     }
+    @Override
+    public  void deleteAllByRenginioKodas(int renginioKodas){
+        rezervavimasRepository.findAllByRenginioKodas(renginioKodas);
+    }
 }

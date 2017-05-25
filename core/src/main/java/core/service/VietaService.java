@@ -7,4 +7,5 @@ import java.util.List;
  */
 public interface VietaService {
     List<Vieta> findAllVieta();
+    Vieta findVietaByVietosNumeris(int vietosNumeris);
 }

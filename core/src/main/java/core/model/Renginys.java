@@ -40,6 +40,9 @@ public class Renginys {
     @Column (name = "renginio_tipo_kodas")
     private int renginioTipoKodas;
 
+    @Column (name = "organizatoriaus_kodas")
+    private int organizatoriausKodas;
+
     public int getRenginioKodas() {
         return renginioKodas;
     }
@@ -118,5 +121,10 @@ public class Renginys {
 
     public void setRenginioTipoKodas(int renginioTipoKodas) {
         this.renginioTipoKodas = renginioTipoKodas;
+    }
+
+    public int getOrganizatoriausKodas(){return organizatoriausKodas;}
+
+    public void setOrganizatoriausKodas(int organizatoriausKodas){ this.organizatoriausKodas = organizatoriausKodas;
     }
 }

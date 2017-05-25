@@ -95,7 +95,7 @@
     <div class="row">
         <div class="col-lg-8 col-lg-offset-2">
             <h2>Apie Projektą</h2>
-            <p>bla bla bla kazkas bus </p>
+            <p>Sveiki! Tai yra renginių paieškos bei rezervavimo sistema,kurioje galite prisijungti, ieškoti renginių, rezervuoti vietą juose, taip pat matyti į kuriuos renginius jau esate užsiregistravę, gauti priminimus apie registraciją. Taip pat prisijungę renginių organizatoriai gali registruoti savo siūlomus renginius, redaguoti jau užregistruotų renginių informaciją. </p>
         </div>
     </div>
 </section>

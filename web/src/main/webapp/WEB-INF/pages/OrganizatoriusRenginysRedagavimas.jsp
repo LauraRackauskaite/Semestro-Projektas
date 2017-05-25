@@ -55,13 +55,7 @@
                 <li>
                     <a class="page-scroll" href="#about">About</a>
                 </li>
-                <li>
-                <li>
-                    <a class="page-scroll" href="/login/">Prisijungti</a>
-                </li>
-                <li>
-                    <a class="page-scroll" href="/registracija/">Registracija</a>
-                </li>
+
                 <li>
                     <a class="page-scroll" href="/organizatoriusRenginioSukurimas/">Renginio registracija</a>
                 </li>
@@ -71,59 +65,67 @@
     </div>
     <!-- /.container -->
 </nav>
-<section id="renginioRegistracija" class="content-section text-center">
-    <form action='/RenginysCreate' method="post">
+<section id="renginioRedagavimas" class="content-section text-center">
+    <form action='/OrganizatoriusRenginysIsaugotiPakeitimus' method="post">
         <div class="col-lg-8 col-lg-offset-2">
-            <h2>Norėdami užregistruoti renginį užpildykite pateiktą formą</h2>
             <div class="form-group row">
                 <%--@declare id="kategorijos"--%><label for="kategorijos" class="col-sm-2 col-form-label">Renginio Kategorija</label>
                 <div class="col-lg-2">
                     <font color="black">
-                    <select name="kategory">
-                        <c:forEach items="${kategorijos}" var="kategorija">
-                        <option value="${kategorija.renginioKategorijosNumeris}">${kategorija.pavadinimas}</option>
-                        </c:forEach>
-                    </select>
+                        <select name="kategory">
+                            <option selected="selected" value="${einamaKategorija.renginioKategorijosNumeris}">${einamaKategorija.pavadinimas}</option>
+                            <c:forEach items="${kategorijos}" var="kategorija">
+                                <option value="${kategorija.renginioKategorijosNumeris}">${kategorija.pavadinimas}</option>
+                            </c:forEach>
+                        </select>
                     </font>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="pavadinimas" class="col-sm-2 col-form-label">Renginio pavadinimas</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="pavadinimas" name="pavadinimas" >
+                    <input type="text" class="form-control" id="pavadinimas" name="pavadinimas" placeholder="${redaguojamas.pavadinimas}">
                 </div>
             </div>
+
             <div class="form-group row">
                 <label for="trumpasAprasymas" class="col-sm-2 col-form-label">Trumpas aprašymas</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="trumpasAprasymas" name="trumpasAprasymas" class="form-control" >
+                    <input type="text" class="form-control" id="trumpasAprasymas" name="trumpasAprasymas" class="form-control" placeholder="${redaguojamas.trumpasAprasymas}" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="renginioData" class="col-sm-2 col-form-label">Renginio data</label>
-                <div class="col-sm-6">
-                    <input type="date" class="form-control" id="renginioData" name="renginioData" class="form-control"  required = "required">
+                <div class="col-sm-3">
+                    <input type="date" class="form-control" id="renginioData" name="renginioData" class="form-control">
                 </div>
+                <fmt:formatDate value="${redaguojamas.renginioData}" var="date" pattern="yyyy-MM-dd"/>
+                <label class="col-sm-3 col-form-label" >Įvesta: ${date}</label>
             </div>
             <div class="form-group row">
                 <label for="renginioLaikas" class="col-sm-2 col-form-label">Renginio laikas</label>
-                <div class="col-sm-6">
-                    <input type="time" class="form-control" id="renginioLaikas" name="renginioLaikas" class="form-control" required = "required">
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" id="renginioLaikas" name="renginioLaikas" class="form-control" >
                 </div>
+                <fmt:formatDate value="${redaguojamas.renginioLaikas}" var="time" pattern="HH:mm" />
+                <label class="col-sm-3 col-form-label" >Įvesta: ${time}</label>
             </div>
             <div class="form-group row">
                 <label for="renginioTrukme" class="col-sm-2 col-form-label">Renginio trukmė</label>
-                <div class="col-sm-6">
-                    <input type="time" class="form-control" id="renginioTrukme" name="renginioTrukme" class="form-control" required = "required">
+                <div class="col-sm-3">
+                    <input type="time" class="form-control" id="renginioTrukme" name="renginioTrukme" class="form-control" >
                 </div>
+                <fmt:formatDate value="${redaguojamas.renginioTrukme}" var="timelen" pattern="HH:mm" />
+                <label class="col-sm-3 col-form-label" >Įvesta: ${timelen}</label>
             </div>
             <div class="form-group row">
-            <%--@declare id="renginioVietosKodas"--%><label for="renginioVietosKodas" class="col-sm-2 col-form-label">Renginio vietos tipas</label>
+                <%--@declare id="renginioVietosTipas"--%><label for="renginioVietosTipas" class="col-sm-2 col-form-label">Vietos renginyje</label>
                 <div class="col-lg-2">
                     <font color="black">
-                        <select name="tip">
-                            <c:forEach items="${vietosTipas}" var="tipas">
-                                <option  value="${tipas.vietosTipoNumeris}">${tipas.pavadinimas}</option>
+                        <select name="VietosTip">
+                            <option selected="selected" value="${einamasVietosTipas.vietosTipoNumeris}">${einamasVietosTipas.pavadinimas}</option>
+                            <c:forEach items="${vietosTipas}" var="vietosTip">
+                                <option value="${vietosTip.vietosTipoNumeris}">${vietosTip.pavadinimas}</option>
                             </c:forEach>
                         </select>
                     </font>
@@ -133,19 +135,19 @@
             <div class="form-group row">
                 <label for="gatve" class="col-sm-2 col-form-label">Renginio Adresas: Gatvė</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="gatve" name="gatve" >
+                    <input type="text" class="form-control" id="gatve" name="gatve" placeholder="${einamaVieta.gatvesPavadinimas}" >
                 </div>
             </div>
             <div class="form-group row">
                 <label for="namNumeris" class="col-sm-2 col-form-label">Renginio Adresas: Namo numeris</label>
-                <div class="col-sm-6">
-                    <input type="number" class="form-control" id="namNumeris" name="namNumeris" >
+                <div class="col-sm-2">
+                    <input type="number" class="form-control" id="namNumeris" name="namNumeris" placeholder="${einamaVieta.namoNumeris}">
                 </div>
             </div>
             <div class="form-group row">
                 <label for="miestas" class="col-sm-2 col-form-label">Renginio Adresas: Miestas</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" id="miestas" name="miestas" >
+                    <input type="text" class="form-control" id="miestas" name="miestas" placeholder="${einamaVieta.miestas}">
                 </div>
             </div>
             <button id="loginButton" class="btn btn-default btn-lg"  class="form-control">Registruoti</button>

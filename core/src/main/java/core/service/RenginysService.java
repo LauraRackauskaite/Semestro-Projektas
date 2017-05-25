@@ -14,4 +14,13 @@ public interface RenginysService {
     void RezervuotisVieta(int renginioIndeksas, int vartotojoindeksas);
     List<String> gautiMygtukus(int vartotojokodas);
     List<String> gautiIspejimus(int vartotojoKodas);
+    //-----------------------------------------
+    List<Renginys> findAllOrganizatoriausRenginiai(int organizatoriausKodas);
+     List<String> findAllOrganizatoriausKategorijos(int organizatoriausKodas);
+     List<String> findAllOrganizatoriausVietosTipai(int organizatoriausKodas);
+     List<Vieta> findAllOrganizatoriausVietos(int organizatoriausKodas);
+    List<String> findAllOrganizatoriausBusenas(int organizatoriausKodas);
+    void pasalintiOrganizatoriausRengini(int renginioIndeksas, int vartotojoKodas);
+    Renginys findRenginysByRenginioKodas(int renginioKodas);
 }
+

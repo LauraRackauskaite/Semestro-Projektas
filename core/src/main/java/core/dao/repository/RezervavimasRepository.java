@@ -13,4 +13,5 @@ public interface RezervavimasRepository extends JpaRepository<Rezervavimas, Inte
     Rezervavimas findRezervavimasByRenginioKodasAndVartotojoKodas(int renginioKodas, int vartotojoKodas);
     void deleteRezervavimasByRezervavimoNumeris(int rezervavimoNumeris);
     List<Rezervavimas> findAllByRenginioKodas(int renginioKodas);
+    void deleteAllByRenginioKodas(int renginioKodas);
 }

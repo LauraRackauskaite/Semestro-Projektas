@@ -89,7 +89,7 @@
                     <div class="form-group row">
                         <label for="slaptazodis" class="col-sm-2 col-form-label">Slaptažodis</label>
                         <div class="col-sm-6">
-                            <input type="text" id="slaptazodis" name="slaptazodis" placeholder="" class="form-control"/>
+                            <input type="password" id="slaptazodis" name="slaptazodis"   placeholder="" class="form-control"/>
                         </div>
                     </div>
                     <button id="loginButton" class="btn btn-default btn-lg" class="form-control">Prisijungti</button>

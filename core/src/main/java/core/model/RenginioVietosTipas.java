@@ -1,8 +1,6 @@
 package core.model;
 import javax.persistence.*;
-/**
- * Created by daini on 2017-05-02.
- */
+
 @Entity
 @Table(name = "renginio_vietos_tipai")
 public class RenginioVietosTipas {

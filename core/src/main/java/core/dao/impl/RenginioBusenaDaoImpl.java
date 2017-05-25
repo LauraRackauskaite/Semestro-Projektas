@@ -30,4 +30,8 @@ public class RenginioBusenaDaoImpl implements RenginioBusenaDao{
     public RenginioBusena findByBusenosPavadinimas(String pavadinimas){
       return renginioBusenaRepository.findByPavadinimas(pavadinimas);
     }
+    @Override
+   public RenginioBusena findRenginioBusenaByRenginioBusenosNumeris(int renginioBusenosNumeris){
+        return renginioBusenaRepository.findRenginioBusenaByRenginioBusenosNumeris(renginioBusenosNumeris);
+    }
 }

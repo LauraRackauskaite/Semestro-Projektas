@@ -22,4 +22,8 @@ public class VietaServiceImpl implements VietaService{
     public List<Vieta> findAllVieta() {
         return vietaDao.findAll();
     }
+    @Override
+    public  Vieta findVietaByVietosNumeris(int vietosNumeris){
+        return vietaDao.findVietaByVietosNumeris(vietosNumeris);
+    }
 }
