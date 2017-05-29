@@ -22,7 +22,7 @@ public interface  RenginysService {
      List<String> findAllOrganizatoriausVietosTipai(int organizatoriausKodas);
      List<Vieta> findAllOrganizatoriausVietos(int organizatoriausKodas);
     List<String> findAllOrganizatoriausBusenas(int organizatoriausKodas);
-    void pasalintiOrganizatoriausRengini(int renginioIndeksas, int vartotojoKodas);
+    void pasalintiOrganizatoriausRengini(int renginioIndeksas);
     Renginys findRenginysByRenginioKodas(int renginioKodas);
     List<Integer> findAllOrganizatoriausRezervacijas( int organizatoriausKodas);
     public  List<Integer> findAllRezervacijuDalyviuLimitus();

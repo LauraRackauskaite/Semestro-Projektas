@@ -57,6 +57,20 @@ public class AdminRenginiai {
     }
     @RequestMapping(value = "/OrganizatoriusRenginysIstrinimas", method = RequestMethod.POST)
     public String show(HttpSession session, Model model, @RequestParam int RenginioIndeksas2){
+        renginysService.pasalintiOrganizatoriausRengini(RenginioIndeksas2);
+        List<Integer> gautiSkaicius = renginysService.findAllRezervacijuDalyviuLimitus();
+        List<Renginys> gautiVisusRenginius = renginysService.findAllRenginys();
+        List<String> gautiVisasRenginiuKategorijas = renginysService.gautiVisasRenginiuKategorijas();
+        List<String> gautiVisasRenginiuTipuVietas = renginysService.gautiVisasRenginiuTipuVietas();
+        List<Vieta> gautiVisasRenginiuVietas = renginysService.gautiVisasEsamasVietas();
+        List<String> gautiBusenas = renginysService.gautiVisasBusenas();
+        model.addAttribute("visiRenginiai", gautiVisusRenginius);
+        model.addAttribute("kategorijos", gautiVisasRenginiuKategorijas);
+        model.addAttribute("vietuTipai", gautiVisasRenginiuTipuVietas);
+        model.addAttribute("vietos", gautiVisasRenginiuVietas);
+        model.addAttribute("gautiSkaicius", gautiSkaicius);
+        model.addAttribute("visosBusenos", gautiBusenas);
         return "AdminRenginiai";
+
     }
 }

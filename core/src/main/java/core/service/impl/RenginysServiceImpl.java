@@ -158,7 +158,7 @@ public class RenginysServiceImpl implements RenginysService{
         return atrinktosBusenos;
     }
     @Override
-    public void pasalintiOrganizatoriausRengini(int renginioIndeksas, int vartotojoKodas){
+    public void pasalintiOrganizatoriausRengini(int renginioIndeksas){
 
        rezervacijaDao.deleteAllByRenginioKodas(renginioIndeksas);
        renginysDao.deleteByRenginioKodas(renginioIndeksas);

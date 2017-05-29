@@ -49,7 +49,7 @@ public class OrganizatoriusRenginiaiController {
     @RequestMapping(value = "/OrganizatoriusRenginysIstrinimas", method = RequestMethod.POST)
     public String show(HttpSession session, Model model, @RequestParam int RenginioIndeksas2){
         Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
-        Service.pasalintiOrganizatoriausRengini(RenginioIndeksas2, vartotojas.getVartotojoKodas());
+        Service.pasalintiOrganizatoriausRengini(RenginioIndeksas2);
         List<Integer> rezervacijosCount = Service.findAllOrganizatoriausRezervacijas(vartotojas.getVartotojoKodas());
         List<Renginys> organizatoriausRenginiai = Service.findAllOrganizatoriausRenginiai(vartotojas.getVartotojoKodas());
         List<String> organizatoriausKategorijos = Service.findAllOrganizatoriausKategorijos(vartotojas.getVartotojoKodas());
