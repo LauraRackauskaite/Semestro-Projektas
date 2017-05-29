@@ -55,7 +55,7 @@ public class AdminRenginiai {
         model.addAttribute("visosBusenos", gautiBusenas);
         return "AdminRenginiai";
     }
-    @RequestMapping(value = "/OrganizatoriusRenginysIstrinimas", method = RequestMethod.POST)
+    @RequestMapping(value = "/AdminRenginiaiAtsaukta", method = RequestMethod.POST)
     public String show(HttpSession session, Model model, @RequestParam int RenginioIndeksas2){
         renginysService.pasalintiOrganizatoriausRengini(RenginioIndeksas2);
         List<Integer> gautiSkaicius = renginysService.findAllRezervacijuDalyviuLimitus();
