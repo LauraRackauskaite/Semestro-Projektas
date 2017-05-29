@@ -45,7 +45,25 @@ public class RenginysDaoImpl implements RenginysDao {
     }
     @Override
     public void renginysDelete(Renginys renginys){
+
         renginysRepository.delete(renginys.getRenginioKodas());
+    }
+    @Override
+    public void deleteByRenginioKodas(int renginioKodas){
+        renginysRepository.deleteByRenginioKodas(renginioKodas);
+    }
+    @Override
+    public void SetRenginysBusena(int busena, int renginioNumeris){
+        renginysRepository.SetRenginysBusena(busena, renginioNumeris);
+    }
+    @Override
+   public List<Renginys> findAllByRenginioBusenosKodasAndRenginioKategorijosKodas(int renginioBusenosKodas,
+                                                                                  int renginioKategorijosKodas){
+        return renginysRepository.findAllByRenginioBusenosKodasAndRenginioKategorijosKodas(renginioBusenosKodas, renginioKategorijosKodas);
+    }
+    @Override
+    public List<Renginys> findAllByRenginioBusenosKodas(int renginioBusenosKodas){
+       return renginysRepository.findAllByRenginioBusenosKodas(renginioBusenosKodas);
     }
 
 }

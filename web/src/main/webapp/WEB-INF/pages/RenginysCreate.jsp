@@ -118,6 +118,12 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label for="dalyviuSkaicius" class="col-sm-2 col-form-label">Dalyvių limitas</label>
+                <div class="col-sm-6">
+                    <input type="number" class="form-control" id="dalyviuSkaicius" name="dalyviuSkaicius" class="form-control" required = "required">
+                </div>
+            </div>
+            <div class="form-group row">
             <%--@declare id="renginioVietosKodas"--%><label for="renginioVietosKodas" class="col-sm-2 col-form-label">Renginio vietos tipas</label>
                 <div class="col-lg-2">
                     <font color="black">

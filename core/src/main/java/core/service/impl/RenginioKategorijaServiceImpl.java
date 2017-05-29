@@ -47,7 +47,7 @@ public class RenginioKategorijaServiceImpl implements RenginioKategorijaService{
                              String trumpasAprasymas,  String renginioData,
                              String renginioLaikas,  String renginioTrukme,
                              int tip,  String gatve,  String miestas,
-                             int namNumeris, int organizatoriausKodas){
+                             int namNumeris, int organizatoriausKodas, int dalyviuSk){
         DateFormat df = new SimpleDateFormat("yyyy-MM-dd");
         Date data = new Date();
         try {
@@ -92,6 +92,7 @@ public class RenginioKategorijaServiceImpl implements RenginioKategorijaService{
             renginys.setRenginioTipoKodas(tip);
             renginys.setRenginioVietosKodas(einama.getVietosNumeris());
             renginys.setOrganizatoriausKodas(organizatoriausKodas);
+            renginys.setDalyviuKiekis(dalyviuSk);
             renginysDao.saveAndFlush(renginys);
     }
     @Override

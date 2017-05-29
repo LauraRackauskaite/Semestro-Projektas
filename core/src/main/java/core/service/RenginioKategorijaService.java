@@ -14,6 +14,6 @@ public interface RenginioKategorijaService {
                              String trumpasAprasymas,  String renginioData,
                              String renginioLaikas,  String renginioTrukme,
                              int tip,  String gatve,  String miestas,
-                             int namNumeris, int organizatoriausKodas);
+                             int namNumeris, int organizatoriausKodas, int skaičiusrezervu);
    RenginioKategorija findRenginioKategorijaByRenginioKategorijosNumeris(int numeris);
 }

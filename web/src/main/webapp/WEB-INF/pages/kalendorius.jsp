@@ -18,7 +18,7 @@
 <div class="container">
     <div class="custom-calendar-wrap custom-calendar-full">
         <div class="custom-header clearfix">
-            <h2>Renginių kalendorius <span><span>kkk</span> | <a href="../../resources/Calendario/index2.html">Demo 2</a></span></h2>
+            <h2>Renginių kalendorius <span><span></span> | <a href="/Vartotojas/">Pagrindinis puslapis</a></span></h2>
             <h3 class="custom-month-year">
                 <span id="custom-month" class="custom-month"></span>
                 <span id="custom-year" class="custom-year"></span>
@@ -70,17 +70,16 @@
         // you can also add more data later on. As an example:
         $( '#custom-aveik' ).on( 'click', function() {
 
+
+
          cal.setData( {
-         '05-09-2017' : '<a href="#">testingdasdasdasddasdddddddddddddddddddddddddddddddddddddddddddddddddddddd</a>',
-         '05-10-2017' : '<a href="#">testing</a>',
-         '05-12-2017' : '<a href="#">testing</a>'
          } );
          // goes to a specific month/year
          //cal.goto( 3, 2013, updateMonthYear );
 
          } );
-       var stringDate = "05-15-2017";
-       var eventInfo = "asdasdasdsad";
+       var stringDate = "";
+       var eventInfo = "";
         var jsonData = "{\"" + stringDate + "\": \"<div class='event' '>" +eventInfo+ "</div>\"}";
         cal.setData(JSON.parse(jsonData));
 

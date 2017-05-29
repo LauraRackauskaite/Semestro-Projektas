@@ -92,8 +92,9 @@ public class VartotojasServiceImpl implements VartotojasService{
     @Override
     public Vartotojas istrintiVartotoja(Vartotojas vartotojas)
     {
-        int id  = vartotojas.getVartotojoKodas();
-        vartotojasDao.deleteVartotojasByVartotojoKodas(id);
+
+        rezervacijaDao.deleteAllByVartotojoKodas(vartotojas.getVartotojoKodas());
+        vartotojasDao.deleteVartotojasByVartotojoKodas(vartotojas.getVartotojoKodas());
         return null;
     }
     @Override
@@ -211,5 +212,16 @@ public class VartotojasServiceImpl implements VartotojasService{
        Rezervavimas rezervavimas = rezervacijaDao.findRezervavimasByRenginioKodasAndVartotojoKodas(renginioIndex, vartotojoKodas);
        rezervacijaDao.deleteRezervavimasByRezervavimoNumeris(rezervavimas.getRezervavimoNumeris());
     }
+    @Override
+    public List<Integer> gautiRezervuoturenginiuDalyviuLimitus(int vartotojoKodas)
+    {
+        List<Renginys> vartotojoReenginius = gautiVartotojoRenginius(vartotojoKodas);
+        List<Integer> skaiciai = new ArrayList<Integer>();
+        for(int i = 0; i < vartotojoReenginius.size(); i++){
+            skaiciai.add(rezervacijaDao.countAllByRenginioKodas(vartotojoReenginius.get(i).getRenginioKodas()));
+        }
+        return skaiciai;
+    }
+
 }
 

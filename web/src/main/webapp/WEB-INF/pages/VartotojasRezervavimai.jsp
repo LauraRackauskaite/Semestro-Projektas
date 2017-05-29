@@ -89,6 +89,7 @@
                     <table class="table">
                         <thead >
                         <tr >
+                            <th>Rezervaciju limitas</th>
                             <th>Renginio pavadinimas</th>
                             <th>Renginio kategorija</th>
                             <th>trumpas aprasymas</th>
@@ -103,6 +104,7 @@
                         <tbody>
                         <c:forEach var="varto" items="${vartoRengi}" varStatus="status" >
                             <tr>
+                                <td>${gautiSkaicius[status.index]}/${varto.dalyviuKiekis}</td>
                                 <td>${varto.pavadinimas}</td>
                                 <td>${kategorijos[status.index]}</td>
                                 <td>${varto.trumpasAprasymas}</td>

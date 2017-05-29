@@ -52,6 +52,14 @@ public class RezervacijaDaoImpl implements RezervacijaDao{
     }
     @Override
     public  void deleteAllByRenginioKodas(int renginioKodas){
-        rezervavimasRepository.findAllByRenginioKodas(renginioKodas);
+        rezervavimasRepository.deleteAllByRenginioKodas(renginioKodas);
+    }
+    @Override
+    public int countAllByRenginioKodas(int renginioKodas){
+      return rezervavimasRepository.countAllByRenginioKodas(renginioKodas);
+    }
+    @Override
+   public void deleteAllByVartotojoKodas(int vartotojoKodas){
+         rezervavimasRepository.deleteAllByVartotojoKodas(vartotojoKodas);
     }
 }

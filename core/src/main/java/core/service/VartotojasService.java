@@ -30,4 +30,5 @@ public interface VartotojasService {
     List<Vieta> gautiVartotojovietasRenginiuose(int vartotojoKodas);
     List<String> gautiVartotojovietuTipus(int vartotojoKodas);
     void TrintiRezervacija(int renginioIndex, int vartotojoKodas);
+    List<Integer> gautiRezervuoturenginiuDalyviuLimitus(int vartotojoKodas);
 }

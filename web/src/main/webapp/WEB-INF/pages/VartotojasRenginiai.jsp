@@ -70,6 +70,23 @@
         <div class="container-fluid">
             <div class="row">
                 <body>
+
+                <form action='/VartotojasRenginiaiAtrinkti' method="post">
+                <div class="form-group row">
+                    <%--@declare id="kategorijos"--%><label for="kategorijos" class="col-sm-2 col-form-label">Atrinkti pagal kategoriją</label>
+                    <div class="col-lg-2">
+                        <font color="black">
+                            <select name="kategory">
+                                <c:forEach items="${gautiVisasRenginioKategoijas}" var="kategorija">
+                                    <option value="${kategorija.renginioKategorijosNumeris}">${kategorija.pavadinimas}</option>
+                                </c:forEach>
+                            </select>
+                        </font>
+
+                        <button id="loginButton" class="btn btn-default btn-lg"  class="form-control">Atrikti</button>
+                    </div>
+                </div>
+                </form>
                 <tr>
                     <th></th>
                     <th></th>
@@ -89,6 +106,7 @@
                     <table class="table">
                         <thead >
                         <tr >
+                            <th>Rezervaciju limitas</th>
                             <th>Renginio pavadinimas</th>
                             <th>Renginio kategorija</th>
                             <th>trumpas aprasymas</th>
@@ -103,6 +121,7 @@
                         <tbody>
                         <c:forEach var="varto" items="${visiRenginiai}" varStatus="status" >
                             <tr>
+                                <td>${gautiSkaicius[status.index]}/${varto.dalyviuKiekis}</td>
                                 <td>${varto.pavadinimas}</td>
                                 <td>${kategorijos[status.index]}</td>
                                 <td>${varto.trumpasAprasymas}</td>

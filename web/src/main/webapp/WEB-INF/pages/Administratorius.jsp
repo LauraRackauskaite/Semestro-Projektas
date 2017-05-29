@@ -56,7 +56,7 @@
                     <a href="#page-top"></a>
                 </li>
                 <li>
-                    <a class="page-scroll" href="/Renginiai">adminis</a>
+                    <a class="page-scroll" href="/AdminRenginiai">Visi Renginiai</a>
                 </li>
                 <li>
                     <a class="page-scroll" href="/AdminNustatymai">Nustatymai</a>

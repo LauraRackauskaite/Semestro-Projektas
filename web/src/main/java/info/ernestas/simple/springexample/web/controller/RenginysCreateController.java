@@ -37,6 +37,7 @@ public class RenginysCreateController {
     @RequestMapping(value = "/RenginysCreate", method = RequestMethod.POST)
     public  String CreateRenginys( @RequestParam int kategory,
                                    @RequestParam String pavadinimas,
+                                   @RequestParam int dalyviuSkaicius,
                                   @RequestParam String trumpasAprasymas, @RequestParam String renginioData,
                                   @RequestParam String renginioLaikas, @RequestParam String renginioTrukme,
                                   @RequestParam int tip, @RequestParam String gatve, @RequestParam String miestas,
@@ -45,7 +46,7 @@ public class RenginysCreateController {
         DateFormat formatter = new SimpleDateFormat("HH:mm");
         Vartotojas organizatorius = (Vartotojas) session.getAttribute("loggedInUser");
         renginioKategorijaService.CreateEvent(kategory, pavadinimas, trumpasAprasymas, renginioData, renginioLaikas, renginioTrukme,
-                tip,gatve, miestas, namNumeris, organizatorius.getVartotojoKodas());
+                tip,gatve, miestas, namNumeris, organizatorius.getVartotojoKodas(), dalyviuSkaicius);
         return "Organizatorius";
     }
 }

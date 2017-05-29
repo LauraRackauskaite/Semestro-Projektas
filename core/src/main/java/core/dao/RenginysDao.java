@@ -14,4 +14,8 @@ public interface RenginysDao {
     void saveAndFlush(Renginys renginys);
     List<Renginys> findAllByOrganizatoriausKodas(int organizatoriausKodas);
     void renginysDelete(Renginys renginys);
+    void deleteByRenginioKodas(int renginioKodas);
+    void SetRenginysBusena(int busena, int renginioNumeris);
+    List<Renginys> findAllByRenginioBusenosKodasAndRenginioKategorijosKodas(int renginioBusenosKodas, int renginioKategorijosKodas);
+    List<Renginys> findAllByRenginioBusenosKodas(int renginioBusenosKodas);
 }

@@ -40,6 +40,17 @@ public class Renginys {
     @Column (name = "renginio_tipo_kodas")
     private int renginioTipoKodas;
 
+    @Column (name = "dalyviu_kiekis")
+    private int dalyviuKiekis;
+
+    public int getDalyviuKiekis() {
+        return dalyviuKiekis;
+    }
+
+    public void setDalyviuKiekis(int dalyviuKiekis) {
+        this.dalyviuKiekis = dalyviuKiekis;
+    }
+
     @Column (name = "organizatoriaus_kodas")
     private int organizatoriausKodas;
 
@@ -127,4 +138,6 @@ public class Renginys {
 
     public void setOrganizatoriausKodas(int organizatoriausKodas){ this.organizatoriausKodas = organizatoriausKodas;
     }
+
+
 }

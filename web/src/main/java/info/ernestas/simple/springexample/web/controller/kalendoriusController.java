@@ -3,6 +3,7 @@ package info.ernestas.simple.springexample.web.controller;
 import core.model.Renginys;
 import core.model.Vartotojas;
 import core.service.VartotojasService;
+import core.service.RenginysService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,16 +13,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-/**
- * Created by daini on 2017-05-09.
- */
+
 @Controller
-public class VartotojasController {
+public class kalendoriusController {
+    @Autowired
+    private RenginysService renginysService;
     @Autowired
     private VartotojasService Service;
-    @RequestMapping(value = "/Vartotojas", method = RequestMethod.GET)
-    public String showVartotojasIndex() {
-        return "Vartotojas";
+    @RequestMapping(value = "/kalendorius", method = RequestMethod.GET)
+    public String showVartotojaskalendorius(HttpSession session, Model model) {
+        Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
+        List<Renginys> gautiVisusRenginius = renginysService.findAllRenginys();
+        model.addAttribute("visiRenginiai", gautiVisusRenginius);
+        return "kalendorius";
     }
 
 }

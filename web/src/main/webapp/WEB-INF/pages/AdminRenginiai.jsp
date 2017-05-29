@@ -52,7 +52,7 @@
         <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
             <ul class="nav navbar-nav">
                 <li>
-                    <a class="page-scroll" href="/Organizatorius/">Grįžti į pagrindinį puslapį</a>
+                    <a class="page-scroll" href="/Administratorius/">Grįžti į pagrindinį puslapį</a>
                 </li>
             </ul>
         </div>
@@ -81,7 +81,7 @@
                     <th>
                         <header>
 
-                            <h2> Tavo sukurti renginiai</h2>
+                            <h2> Esami Renginiai</h2>
                         </header>
                     </th>
                 </tr>
@@ -89,8 +89,8 @@
                     <table class="table">
                         <thead >
                         <tr >
-                            <th>Renginio Būsena</th>
-                            <th>Rezervacijos</th>
+                            <th>Renginio busena</th>
+                            <th>Rezervaciju limitas</th>
                             <th>Renginio pavadinimas</th>
                             <th>Renginio kategorija</th>
                             <th>trumpas aprasymas</th>
@@ -99,15 +99,14 @@
                             <th>Renginio trukmė</th>
                             <th>Renginio vieta</th>
                             <th>Renginio vietos tipas</th>
-                            <th>Redaguoti renginį</th>
-                            <th>Atšaukti renginį</th>
+                            <th>Patvirtinti Vietą</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="varto" items="${visiRenginiai}" varStatus="status" >
                             <tr>
-                                <td>${busenos[status.index]}</td>
-                                <td>${rezervacijosSk[status.index]}/${varto.dalyviuKiekis}</td>
+                                <td>${visosBusenos[status.index]}</td>
+                                <td>${gautiSkaicius[status.index]}/${varto.dalyviuKiekis}</td>
                                 <td>${varto.pavadinimas}</td>
                                 <td>${kategorijos[status.index]}</td>
                                 <td>${varto.trumpasAprasymas}</td>
@@ -121,16 +120,17 @@
                                 <td>${vietuTipai[status.index]}</td>
                                 <td>
                                     <form
-                                            id="form1" name="form1" method="post" action="/OrganizatoriusRenginysRedagavimas">
-                                        <button type="submit" name="RenginioIndeksas1"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='OrganizatoriusRenginysRedagavimas?flag=1&act=1';" />Redaguoti</form>
+                                            id="form2" name="form2" method="post" action="/AdminRenginiaiPatvirtinta">
+                                        <button type="submit" name="RenginioIndeksas1"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='AdminRenginiaiPatvirtinta?flag=1&act=1';" />Patvirtinti</form>
                                     </form>
                                 </td>
                                 <td>
                                     <form
-                                            id="form2" name="form2" method="post" action="/OrganizatoriusRenginysIstrinimas" onsubmit=" return window.confirm('Ar tikrai norite ištrinti renginį?');">
-                                        <button type="submit" name="RenginioIndeksas2"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='OrganizatoriusRenginysIstrinimas?flag=1&act=1';"/>Atšaukti</form>
+                                            id="form1" name="form1" method="post" action="/AdminRenginiaiAtsaukta" onsubmit=" return window.confirm('Ar tikrai norite atšaukti renginį?');">
+                                        <button type="submit" name="RenginioIndeksas2"  class="btn btn-default btn-lg" value="${varto.renginioKodas}" onclick="this.form.action='AdminRenginiaiAtsaukta?flag=1&act=1';" />Atšaukti</form>
                                     </form>
                                 </td>
+
                             </tr>
                         </c:forEach>
                         </tbody>

@@ -61,6 +61,9 @@
                 <li >
                         <a class="page-scroll" href="/VartotojasRezervavimai">Tavo Rezervacijos</a>
                 </li>
+                <li >
+                    <a class="page-scroll" href="/kalendorius">Kalendorius</a>
+                </li>
                 <li>
                     <a class="page-scroll" href="/nustatymai">Nustatymai</a>
                 </li>

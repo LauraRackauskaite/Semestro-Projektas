@@ -21,6 +21,7 @@ public class VartotojasRezervavimaiController {
     @RequestMapping(value = "/VartotojasRezervavimai", method = RequestMethod.GET)
     public String showVartotojoRezervavimus(HttpSession session, Model model){
         Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
+        List<Integer>  gautiSkaicius = Service.gautiRezervuoturenginiuDalyviuLimitus(vartotojas.getVartotojoKodas());
         List<Renginys> gautiVartotojoRenginius = Service.gautiVartotojoRenginius(vartotojas.getVartotojoKodas());
         List<String> gautiVartotojoKategorijasRenginius = Service.gautiVartotojoKategorijasRenginius(vartotojas.getVartotojoKodas());
         List<Vieta>  gautiVartotojovietasRenginiuose = Service.gautiVartotojovietasRenginiuose(vartotojas.getVartotojoKodas());
@@ -29,12 +30,14 @@ public class VartotojasRezervavimaiController {
         model.addAttribute("kategorijos", gautiVartotojoKategorijasRenginius);
         model.addAttribute("vietos", gautiVartotojovietasRenginiuose);
         model.addAttribute("vietuTipai", gautiVartotojuVietuTipus);
+        model.addAttribute("gautiSkaicius", gautiSkaicius);
         return "VartotojasRezervavimai";
     }
  @RequestMapping(value = "/VartotojasRezervavimai",  method = RequestMethod.POST)
  public String redaguotiRezervavimus(HttpSession session, Model model, @RequestParam int RenginioIndeksas){
         Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
            Service.TrintiRezervacija( RenginioIndeksas, vartotojas.getVartotojoKodas());
+     List<Integer>  gautiSkaicius = Service.gautiRezervuoturenginiuDalyviuLimitus(vartotojas.getVartotojoKodas());
      List<Renginys> gautiVartotojoRenginius = Service.gautiVartotojoRenginius(vartotojas.getVartotojoKodas());
      List<String> gautiVartotojoKategorijasRenginius = Service.gautiVartotojoKategorijasRenginius(vartotojas.getVartotojoKodas());
      List<Vieta>  gautiVartotojovietasRenginiuose = Service.gautiVartotojovietasRenginiuose(vartotojas.getVartotojoKodas());
@@ -43,6 +46,7 @@ public class VartotojasRezervavimaiController {
      model.addAttribute("kategorijos", gautiVartotojoKategorijasRenginius);
      model.addAttribute("vietos", gautiVartotojovietasRenginiuose);
      model.addAttribute("vietuTipai", gautiVartotojuVietuTipus);
+     model.addAttribute("gautiSkaicius", gautiSkaicius);
   return "VartotojasRezervavimai";
  }
 }

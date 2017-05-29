@@ -32,6 +32,7 @@ public class OrganizatoriusRenginiaiController {
     @RequestMapping(value = "/OrganizatoriusRenginiai", method = RequestMethod.GET)
     public String showOrganizatoriausRenginiai(HttpSession session, Model model){
         Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
+        List<Integer> rezervacijosCount = Service.findAllOrganizatoriausRezervacijas(vartotojas.getVartotojoKodas());
         List<Renginys> organizatoriausRenginiai = Service.findAllOrganizatoriausRenginiai(vartotojas.getVartotojoKodas());
         List<String> organizatoriausKategorijos = Service.findAllOrganizatoriausKategorijos(vartotojas.getVartotojoKodas());
         List<String> organizatoriausVietuTipai = Service.findAllOrganizatoriausVietosTipai(vartotojas.getVartotojoKodas());
@@ -42,12 +43,14 @@ public class OrganizatoriusRenginiaiController {
         model.addAttribute("vietuTipai", organizatoriausVietuTipai);
         model.addAttribute("vietos", organizatoriausVietos);
         model.addAttribute("busenos", organizatoriausBusenos);
+        model.addAttribute("rezervacijosSk", rezervacijosCount);
         return "OrganizatoriusRenginiai";
     }
     @RequestMapping(value = "/OrganizatoriusRenginysIstrinimas", method = RequestMethod.POST)
     public String show(HttpSession session, Model model, @RequestParam int RenginioIndeksas2){
         Vartotojas vartotojas = (Vartotojas) session.getAttribute("loggedInUser");
         Service.pasalintiOrganizatoriausRengini(RenginioIndeksas2, vartotojas.getVartotojoKodas());
+        List<Integer> rezervacijosCount = Service.findAllOrganizatoriausRezervacijas(vartotojas.getVartotojoKodas());
         List<Renginys> organizatoriausRenginiai = Service.findAllOrganizatoriausRenginiai(vartotojas.getVartotojoKodas());
         List<String> organizatoriausKategorijos = Service.findAllOrganizatoriausKategorijos(vartotojas.getVartotojoKodas());
         List<String> organizatoriausVietuTipai = Service.findAllOrganizatoriausVietosTipai(vartotojas.getVartotojoKodas());
@@ -58,6 +61,7 @@ public class OrganizatoriusRenginiaiController {
         model.addAttribute("vietuTipai", organizatoriausVietuTipai);
         model.addAttribute("vietos", organizatoriausVietos);
         model.addAttribute("busenos", organizatoriausBusenos);
+        model.addAttribute("rezervacijosSk", rezervacijosCount);
         return "OrganizatoriusRenginiai";
     }
     @RequestMapping(value = "/OrganizatoriusRenginysRedagavimas", method = RequestMethod.POST)
@@ -74,6 +78,7 @@ public class OrganizatoriusRenginiaiController {
         model.addAttribute("einamaKategorija", renginioKategorija);
         model.addAttribute("einamasVietosTipas", renginioVietosTipas);
         model.addAttribute("einamaVieta", einamaVieta);
+
         return "OrganizatoriusRenginysRedagavimas";
     }
     @RequestMapping(value = "/OrganizatoriusRenginysIsaugotiPakeitimus", method = RequestMethod.POST)
@@ -84,7 +89,6 @@ public class OrganizatoriusRenginiaiController {
                                                 @RequestParam int VietosTip, @RequestParam String gatve, @RequestParam String miestas,
                                                 @RequestParam int namNumeris,
                                                 HttpSession session, Model model){
-
         return "OrganizatoriusRenginiai";
     }
 }
